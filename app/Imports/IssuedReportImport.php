@@ -6,6 +6,8 @@ use App\Models\IssuedReport;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Illuminate\Support\Collection;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
+use Carbon\Carbon;
+
 
 class IssuedReportImport implements ToCollection
 {
@@ -68,20 +70,28 @@ class IssuedReportImport implements ToCollection
         return isset($row['Policy Number']) && is_numeric($row['Policy Number']);
     }
 
-    private function formatDate($date)
-    {
-        if (is_numeric($date)) {
-            // Date is in Excel serialized format
-            return Date::excelToDateTimeObject($date)->format('M-d-y');
-        } elseif (strtotime($date) !== false) {
-            // Date is in a standard string format
-            return date('Y-m-d', strtotime($date));
-        }
-        return null;
-    }
 
     private function cleanNumber($value)
     {
         return $value ? str_replace(',', '', $value) : null;
     }
+    
+    private function formatDate($value)
+{
+    if (!$value) {
+        return null;
+    }
+
+    // Handle numeric Excel dates
+    if (is_numeric($value)) {
+        return Carbon::instance(Date::excelToDateTimeObject($value))->toDateString();
+    }
+
+    // Attempt to parse standard date formats
+    try {
+        return Carbon::parse($value)->toDateString();
+    } catch (\Exception $e) {
+        return null; // Return null if parsing fails
+    }
+}
 }

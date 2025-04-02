@@ -2,12 +2,12 @@
 
 namespace App\Imports;
 
-use App\Models\NapReportUpload;
-use Maatwebsite\Excel\Concerns\ToCollection;
+use App\Models\PolicyPremiumDueListReport;
 use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\ToCollection;
 use Carbon\Carbon;
 
-class NapReportUploadImport implements ToCollection
+class PolicyPremiumDueListReportImport implements ToCollection
 {
     private $headingRow = 0;
 
@@ -101,7 +101,4 @@ class NapReportUploadImport implements ToCollection
             return null; // Return null if parsing fails
         }
     }
-
-    
-
 }

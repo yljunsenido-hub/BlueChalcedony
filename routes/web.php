@@ -40,6 +40,9 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/admin/nap_report_upload'  , [NapReportUploadController::class, 'index_NapReportUpload']);
         Route::post('/admin/nap_report_upload'  , [NapReportUploadController::class, 'importExcelData']);
+
+        Route::get('/admin/nap_report_upload'  , [PolicyPremiumDueListReportController::class, 'index_PolicyPremiumDueListReportUpload']);
+        Route::post('/admin/nap_report_upload'  , [PolicyPremiumDueListReportController::class, 'importExcelData']);
     });
 
     Route::group(['middleware' => ['role:branch_manager']], function () {

@@ -38,7 +38,7 @@
                         <td class="border border-gray-300 px-4 py-2">{{ $post->Plan_code }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $post->Currency }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $post->Client_name }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->First_issue_date}}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $post->First_issued_date}}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $post->Mode }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $post->Modal_premium }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $post->Sum_assured }}</td>
