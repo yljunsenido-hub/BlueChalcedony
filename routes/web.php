@@ -8,6 +8,7 @@ use App\Http\Controllers\UnitManagerController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
+use App\Http\Controllers\PolicyPremiumDueListReportController;
 
 
 Route::get('/dashboard', function () {
@@ -31,6 +32,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/issued_report_upload', [AdminController::class, 'index_IssuedReportUpload']);
         Route::get('/admin/nap_report_upload', [AdminController::class, 'index_NapReportUpload']);
         Route::get('/admin/nap_report', [NapReportUploadController::class, 'index_NapReport']);
+        Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
+        Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);

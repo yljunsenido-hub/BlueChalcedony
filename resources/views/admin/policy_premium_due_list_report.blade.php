@@ -9,7 +9,7 @@
 <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-6">
     <!-- Policies Issued Report -->
     <div class="bg-gray-600 p-3 text-white text-xl text-center rounded-t-lg">
-        POLICIES ISSUED REPORT
+        POLICY PREMIUM DUE LIST REPORT
     </div>
 
     <div class="overflow-x-auto">
@@ -30,25 +30,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($posts as $post)
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->UM }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->AG }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Policy_number }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Plan_code }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Currency }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Client_name }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->First_issue_date}}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Mode }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Modal_premium }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->Sum_assured }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $post->API }}</td>
-                    </tr>
-                @endforeach
             </tbody>
         </table>
     </div>
 </div>
 
 
-    </x-app-layout>
+</x-app-layout>

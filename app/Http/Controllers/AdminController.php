@@ -25,4 +25,14 @@ class AdminController extends Controller
     {
         return view('admin.nap_report');
     }
+
+    public function index_policyPremiumDueListUpload()
+    {
+        return view('admin.policy_premium_upload');
+    }
+
+    public function index_policyPremiumDueList()
+    {
+        return view('admin.policy_premium_due_list_report');
+    }
 }
