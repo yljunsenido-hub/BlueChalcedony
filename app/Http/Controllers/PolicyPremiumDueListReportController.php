@@ -31,7 +31,7 @@ class PolicyPremiumDueListReportController extends Controller
         ]);
 
         try {
-            Excel::import(new PolicyPremiumDueListReport, $request->file('import-file'));
+            Excel::import(new PolicyPremiumDueListReportImport, $request->file('import-file'));
             return redirect()->back()->with('status', 'Imported Successfully');
         } catch (Exception $e) {
             return redirect()->back()->with('error', 'Error importing file: ' . $e->getMessage());

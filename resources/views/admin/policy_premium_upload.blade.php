@@ -11,7 +11,7 @@
                 <div class="p-10 text-gray-900 dark:text-gray-100 flex justify-center">
                     <div class="bg-white p-6 rounded-lg shadow-md w-96">
                         <h2 class="text-lg font-semibold mb-4">Upload Policy Premium Report Upload</h2>
-                        <form action="{{url('/admin/nap_report_upload')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{url('/admin/policy_premium_report_upload')}}" method="POST" enctype="multipart/form-data">
                             @csrf    
                             <div class="mb-4">
                                 <label for="file-upload" class="block text-sm font-medium text-gray-700">Choose a file</label>

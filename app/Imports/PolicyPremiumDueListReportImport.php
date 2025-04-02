@@ -6,6 +6,7 @@ use App\Models\PolicyPremiumDueListReport;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class PolicyPremiumDueListReportImport implements ToCollection
 {
@@ -13,7 +14,7 @@ class PolicyPremiumDueListReportImport implements ToCollection
 
     public function collection(Collection $rows)
     {
-        $this->headingRow = $this->findHeadingRow($rows, 'UM');
+        $this->headingRow = $this->findHeadingRow($rows, 'Month Year');
 
         foreach ($rows as $index => $row) {
             if ($index <= $this->headingRow || $this->isInvalidRow($row)) {
@@ -23,21 +24,33 @@ class PolicyPremiumDueListReportImport implements ToCollection
             $rowData = $this->mapRowToHeaders($row, $rows[$this->headingRow]);
 
             if ($this->isValidRow($rowData)) {
-                NapReportUpload::create([
-                    'UM'                  => $this->truncate($rowData['UM'] ?? null, 255),
-                    'AG'                  => $this->truncate($rowData['AG'] ?? null, 255),
-                    'Policy_number'       => $rowData['Policy Number'] ?? null,
-                    'Account_type'        => $rowData['Account Type'] ?? null,
-                    'Contract_type_code'  => $rowData['Contract Type Code'] ?? null,
-                    'Type_desc'           => $rowData['Type Desc'] ?? null,
-                    'Transaction_date'    => $this->formatDate($rowData['Transaction Date'] ?? null),
-                    'Temp_receipt_date'   => $this->formatDate($rowData['Temp Receipt Date'] ?? null),
-                    'Agent_code'          => $rowData['Agent Code'] ?? null,
-                    'Agent_name'          => $rowData['Agent Name'] ?? null,
-                    'SUCode'              => $rowData['SUCode'] ?? null,
-                    'Branch_name'         => $rowData['Branch Name'] ?? null,
-                    'API'                 => $this->cleanNumber($rowData['API'] ?? 0),
-                    'CCCredit'            => $this->cleanNumber($rowData['CCCredit'] ?? 0),
+                $monthYear = $this->truncate($rowData['Month Year'] ?? null, 255);
+
+                if (empty($monthYear)) {
+                    Log::error("Skipping row due to missing 'Month_year': " . json_encode($rowData));
+                    continue; // Skip rows where 'Month_year' is missing
+                }
+
+                PolicyPremiumDueListReport::create([
+                    'Month_year'        => $monthYear,
+                    'Dates'             => $this->truncate($rowData['Dates'] ?? null, 255),
+                    'Servicing_agent'   => $rowData['Servicing Agent'] ?? null,
+                    'Owner'             => $rowData['Owner'] ?? null,
+                    'Policy_insured'    => $rowData['Policy Insured'] ?? null,
+                    'Policy_number'     => $rowData['Policy Number'] ?? null,
+                    'Contract_status'   => $rowData['Contract Status'] ?? null,
+                    'Premium_status'    => $rowData['Premium Status'] ?? null,
+                    'Mode'              => $rowData['Mode'] ?? null,
+                    'Plan_code'         => $rowData['Plan Code'] ?? null,
+                    'Plan_description'  => $rowData['Plan Description'] ?? null,
+                    'Effectivity_date'  => $this->formatDate($rowData['Effectivity Date'] ?? null), 
+                    'Currency'          => $rowData['Currency'] ?? null,
+                    'Sum_assured'       => $this->cleanNumber($rowData['Sum Assured'] ?? 0),
+                    'Modal_premium'     => $this->cleanNumber($rowData['Modal Premium'] ?? 0),
+                    'Due_date'          => $this->formatDate($rowData['Due Date'] ?? null),
+                    'API'               => $this->cleanNumber($rowData['API'] ?? 0),
+                    'created_at'        => now(),
+                    'updated_at'        => now(),
                 ]);
             }
         }
@@ -57,7 +70,7 @@ class PolicyPremiumDueListReportImport implements ToCollection
     {
         $mappedRow = [];
         foreach ($headerRow as $key => $header) {
-            $mappedRow[$header] = $row[$key] ?? null;
+            $mappedRow[trim($header)] = $row[$key] ?? null;
         }
         return $mappedRow;
     }
@@ -84,21 +97,20 @@ class PolicyPremiumDueListReportImport implements ToCollection
     }
 
     private function formatDate($value)
-    {
-        if (!$value) {
-            return null;
-        }
-
-        // Check if the value is a numeric Excel date (e.g., 45000 means 2023-03-15)
-        if (is_numeric($value)) {
-            return Carbon::createFromDate(1899, 12, 30)->addDays($value)->toDateString();
-        }
-
-        // Attempt to parse text-based date formats
-        try {
-            return Carbon::parse($value)->toDateString();
-        } catch (\Exception $e) {
-            return null; // Return null if parsing fails
-        }
+{
+    if (!$value) {
+        return 'UNKNOWN'; // 🔹 Default value if the date is null
     }
+
+    if (is_numeric($value)) {
+        return Carbon::createFromDate(1899, 12, 30)->addDays($value)->toDateString();
+    }
+
+    try {
+        return Carbon::parse($value)->toDateString();
+    } catch (\Exception $e) {
+        Log::error("Invalid date format: {$value}");
+        return 'UNKNOWN'; // 🔹 Ensures it never returns NULL
+    }
+}
 }
