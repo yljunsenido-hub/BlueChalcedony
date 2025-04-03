@@ -2,10 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Roles\AdminController;
-use App\Http\Controllers\Roles\BranchManagerController;
-use App\Http\Controllers\Roles\UnitManagerController;
-use App\Http\Controllers\Roles\AgentController;
+
+// Register
+use App\Http\Controllers\Auth\RegisteredUserController;
+
+// Roles
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BranchManagerController;
+use App\Http\Controllers\UnitManagerController;
+use App\Http\Controllers\AgentController;
+
+// Controllers
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
 use App\Http\Controllers\PolicyPremiumDueListReportController;
@@ -27,6 +34,7 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('/admin/register', [RegisteredUserController::class, 'index_Register']);
         Route::get('/admin/dashboard', [AdminController::class, 'index']);
         Route::get('/admin/dashboard', [IssuedReportController::class, 'index']);
         Route::get('/admin/issued_report_upload', [AdminController::class, 'index_IssuedReportUpload']);
