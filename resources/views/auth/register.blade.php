@@ -21,6 +21,7 @@
             <label for="role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Role</label>
             <select id="role" name="role" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <option value="" disabled selected class="text-gray-400"></option>
+                <option value="admin">Admin</option>
                 <option value="agent">Agent</option>
                 <option value="unit_manager">Unit Manager</option>
                 <option value="branch_manager">Unit Manager Aspirant</option>

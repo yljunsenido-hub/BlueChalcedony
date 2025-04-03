@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BranchManagerController;
-use App\Http\Controllers\UnitManagerController;
-use App\Http\Controllers\AgentController;
+use App\Http\Controllers\Roles\AdminController;
+use App\Http\Controllers\Roles\BranchManagerController;
+use App\Http\Controllers\Roles\UnitManagerController;
+use App\Http\Controllers\Roles\AgentController;
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
 use App\Http\Controllers\PolicyPremiumDueListReportController;
@@ -45,16 +45,57 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/policy_premium_report_upload'  , [PolicyPremiumDueListReportController::class, 'importExcelData']);
     });
 
+    Route::group(['middleware' => ['role:agent']], function () {
+        Route::get('/agent/dashboard', [AgentController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:unit_manager']], function () {
+        Route::get('/unit_manager/dashboard', [AgentController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:unit_manager_aspirant']], function () {
+        Route::get('/unit_manager_aspirant/dashboard', [AgentController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:assistant_unit_manager']], function () {
+        Route::get('/assistant_unit_manager/dashboard', [AgentController::class, 'index']);
+    });
+    
+    Route::group(['middleware' => ['role:financial_adviser']], function () {
+        Route::get('/financial_adviser/dashboard', [AgentController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:unit_operations']], function () {
+        Route::get('/unit_operations/dashboard', [AgentController::class, 'index']);
+    });
+
     Route::group(['middleware' => ['role:branch_manager']], function () {
         Route::get('/branch-manager/dashboard', [BranchManagerController::class, 'index']);
     });
 
+    Route::group(['middleware' => ['role:senior_assistant_unit_manager']], function () {
+        Route::get('/senior_assistant_unit_manager/dashboard', [BranchManagerController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:branch_manager_operations']], function () {
+        Route::get('/branch_manager_operations/dashboard', [BranchManagerController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:branch_nb_officer']], function () {
+        Route::get('/branch_nb_officer/dashboard', [BranchManagerController::class, 'index']);
+    });
+
+    Route::group(['middleware' => ['role:junior_unit_manager']], function () {
+        Route::get('/junior_unit_manager/dashboard', [BranchManagerController::class, 'index']);
+    });
+
+
+
+    
     Route::group(['middleware' => ['role:unit_manager']], function () {
         Route::get('/unit-manager/dashboard', [UnitManagerController::class, 'index']);
     });
 
-    Route::group(['middleware' => ['role:agent']], function () {
-        Route::get('/agent/dashboard', [AgentController::class, 'index']);
-    });
+    
 });
 
