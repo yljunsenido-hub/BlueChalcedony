@@ -24,6 +24,7 @@ class User extends Authenticatable
         'role',
         'branch',
         'unit',
+        'sub_unit',
         'first_name',
         'middle_name',
         'last_name',

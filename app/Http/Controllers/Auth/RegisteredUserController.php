@@ -44,6 +44,7 @@ class RegisteredUserController extends Controller
             'role' => ['required', 'string'],
             'branch' => ['required', 'string'],
             'unit' => ['required', 'string'],
+            'sub_unit' => ['required', 'string'],
             'first_name' => ['required', 'string'],
             'middle_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
@@ -63,6 +64,7 @@ class RegisteredUserController extends Controller
             'role' => $request->role, // Assign role correctly
             'branch' => $request->branch,
             'unit' => $request->unit,
+            'sub_unit' => $request->sub_unit,
             'first_name' => $request->first_name,
             'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
