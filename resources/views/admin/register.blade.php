@@ -25,14 +25,14 @@
                 <option value="agent">Agent</option>
                 <option value="unit_manager">Unit Manager</option>
                 <option value="branch_manager">Unit Manager Aspirant</option>
-                <option value="admin">Assistant Unit Manager</option>
-                <option value="admin">Financial Advisor</option>
-                <option value="admin">Unit Operations</option>
-                <option value="admin">Branch Manager</option>
-                <option value="admin">Senior Assistant Unit Manager</option>
-                <option value="admin">Branch Manager Operations</option>
-                <option value="admin">Branch NB Officer</option>
-                <option value="admin">Junior Unit Manager</option>
+                <option value="assistant_unit_manager">Assistant Unit Manager</option>
+                <option value="financial_advisor">Financial Advisor</option>
+                <option value="unit_operations">Unit Operations</option>
+                <option value="branch_manager">Branch Manager</option>
+                <option value="senior_assistant_unit_manager">Senior Assistant Unit Manager</option>
+                <option value="branch_manager_operations">Branch Manager Operations</option>
+                <option value="branch_nb_officer">Branch NB Officer</option>
+                <option value="junior_unit_manager">Junior Unit Manager</option>
             </select>
         </div>
 
@@ -41,7 +41,7 @@
             <label for="branch" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Branch</label>
             <select id="branch" name="branch" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <option value="" disabled selected class="text-gray-400"></option>
-                <option value="agent">BLUE CHALCEDONY QUARTZ BRANCH</option>
+                <option value="blue_chalcedony_quartz_branch">BLUE CHALCEDONY QUARTZ BRANCH</option>
             </select>
         </div>
 
@@ -50,17 +50,25 @@
             <label for="unit" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Unit</label>
             <select id="unit" name="unit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <option value="" disabled selected class="text-gray-400"></option>
-                <option value="agent">BLUE CHALCEDONY DIRECT</option>
-                <option value="unit_manager">BLUE ROYALS</option>
-                <option value="branch_manager">INFINITY QUEST</option>
-                <option value="admin">GOLDEN CHALCEDONY</option>
-                <option value="admin">CHALCEDONY HEART</option>
-                <option value="admin">CHALCEDONY PHOENIX</option>
-                <option value="admin">CHALCEDONY SUPREME</option>
-                <option value="admin">CHALCEDONY ELITES</option>
-                <option value="admin">CHALCEDONY GEMS</option>
-                <option value="admin">ICEBERG SOLUTIONS INC</option>
-                <option value="admin">CHALCEDONY ARCHERS</option>
+                <option value="blue_chalcedony_direct">BLUE CHALCEDONY DIRECT</option>
+                <option value="blue_royals">BLUE ROYALS</option>
+                <option value="infinity_quest">INFINITY QUEST</option>
+                <option value="golden_chalcedony">GOLDEN CHALCEDONY</option>
+                <option value="chalcedony_heart">CHALCEDONY HEART</option>
+                <option value="chalcedony_phoenix">CHALCEDONY PHOENIX</option>
+                <option value="chalcedony_supreme">CHALCEDONY SUPREME</option>
+                <option value="chalcedony_elites">CHALCEDONY ELITES</option>
+                <option value="chalcedony_gems">CHALCEDONY GEMS</option>
+                <option value="iceberg_solutions_inc">ICEBERG SOLUTIONS INC</option>
+                <option value="chalcedony_archers">CHALCEDONY ARCHERS</option>
+            </select>
+        </div>
+
+        <!-- Sub Unit -->
+        <div class="mt-4">
+            <label for="subunit" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sub Unit</label>
+            <select id="subunit" name="subunit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <option value="" disabled selected class="text-gray-400"></option>
             </select>
         </div>
 
@@ -118,9 +126,9 @@
             <label for="agentstatus" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Agent Status</label>
             <select id="agentstatus" name="agentstatus" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <option value="" disabled selected class="text-gray-400"></option>
-                <option value="agent">ACTIVE</option>
-                <option value="agent">DELISTED</option>
-                <option value="agent">OPERATIONS</option>
+                <option value="active">ACTIVE</option>
+                <option value="delisted">DELISTED</option>
+                <option value="operations">OPERATIONS</option>
             </select>
         </div>
 
