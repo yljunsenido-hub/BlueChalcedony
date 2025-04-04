@@ -16,6 +16,9 @@ class AdminController extends Controller
         return view('admin.issued_report_upload');
     }
 
+
+
+    
     public function index_NapReportUpload()
     {
         return view('admin.nap_report_upload');
@@ -25,6 +28,9 @@ class AdminController extends Controller
     {
         return view('admin.nap_report');
     }
+
+
+
 
     public function index_policyPremiumDueListUpload()
     {
