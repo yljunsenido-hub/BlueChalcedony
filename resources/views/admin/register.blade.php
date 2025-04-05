@@ -74,8 +74,17 @@
 
         <script>
             const countryCities = {
-                philippines: ['Manila', 'Cebu', 'Davao'],
-                japan: ['Tokyo', 'Osaka', 'Kyoto']
+                blue_chalcedony_direct: ['TEAM JOCELYN FABIAN (DIRECT)', 'TEAM MERCIDITA FRANCISCO HILARIO', 'Davao'],
+                blue_royals: ['Manila', 'Cebu', 'Davao'],
+                infinity_quest: ['Manila', 'Cebu', 'Davao'],
+                golden_chalcedony: ['Manila', 'Cebu', 'Davao'],
+                chalcedony_heart: ['Manila', 'Cebu', 'Davao'],
+                chalcedony_phoenix: ['Manila', 'Cebu', 'Davao'],
+                chalcedony_supreme: ['Manila', 'Cebu', 'Davao'],
+                chalcedony_elites: ['Manila', 'Cebu', 'Davao'],
+                chalcedony_gems: ['Manila', 'Cebu', 'Davao'],
+                iceberg_solutions_inc: ['Manila', 'Cebu', 'Davao'],
+                chalcedony_archers: ['Manila', 'Cebu', 'Davao'],
             };
 
             document.getElementById('country').addEventListener('change', function() {
