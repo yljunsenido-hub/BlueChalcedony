@@ -72,6 +72,29 @@
             </select>
         </div>
 
+        <script>
+            const countryCities = {
+                philippines: ['Manila', 'Cebu', 'Davao'],
+                japan: ['Tokyo', 'Osaka', 'Kyoto']
+            };
+
+            document.getElementById('country').addEventListener('change', function() {
+                const selected = this.value;
+                const citySelect = document.getElementById('city');
+
+                citySelect.innerHTML = '<option value="">Select City</option>'; // reset
+
+                if (selected && countryCities[selected]) {
+                    countryCities[selected].forEach(city => {
+                        const opt = document.createElement('option');
+                        opt.value = city;
+                        opt.textContent = city;
+                        citySelect.appendChild(opt);
+                    });
+                }
+            });
+        </script>
+
         <!-- First Name -->
         <div class="mt-4">
             <x-input-label for="firstname" :value="__('First Name')" />
