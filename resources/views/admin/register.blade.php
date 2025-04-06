@@ -74,7 +74,7 @@
 
         <script>
             const countryCities = {
-                blue_chalcedony_direct: ['TEAM JOCELYN FABIAN (DIRECT)', 'TEAM MERCIDITA FRANCISCO HILARIO', 'Davao'],
+                blue_chalcedony_direct: ['TEAM  FABIAN (DIRECT)', 'TEAM MERCIDITA FRANCISCO HILARIO', 'Davao'],
                 blue_royals: ['Manila', 'Cebu', 'Davao'],
                 infinity_quest: ['Manila', 'Cebu', 'Davao'],
                 golden_chalcedony: ['Manila', 'Cebu', 'Davao'],
