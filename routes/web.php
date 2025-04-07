@@ -13,6 +13,7 @@ use App\Http\Controllers\UnitManagerController;
 use App\Http\Controllers\AgentController;
 
 // Controllers
+use App\Http\Controllers\SubUnitsController;
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
 use App\Http\Controllers\PolicyPremiumDueListReportController;
@@ -51,6 +52,9 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/admin/policy_premium_report_upload'  , [PolicyPremiumDueListReportController::class, 'index_PolicyPremiumDueListReportUpload']);
         Route::post('/admin/policy_premium_report_upload'  , [PolicyPremiumDueListReportController::class, 'importExcelData']);
+
+
+        Route::get('/admin/register/{unit_key}', [SubUnitsController::class, 'getSubUnits']);
     });
 
     Route::group(['middleware' => ['role:agent']], function () {

@@ -9,10 +9,10 @@
             <x-input-error :messages="$errors->get('agentcode')" class="mt-2" />
         </div>
 
-        <!-- Agent Code -->
+        <!-- Recruiter Code -->
         <div class="mt-4">
             <x-input-label for="recruitercode" :value="__('Recruiter Code')" />
-            <x-text-input id="recruitercode" class="block mt-1 w-full" type="text" name="recruitercode" :value="old('recruitercode')" required autofocus autocomplete="recruitercode" />
+            <x-text-input id="recruitercode" class="block mt-1 w-full" type="text" name="recruitercode" :value="old('recruitercode')" />
             <x-input-error :messages="$errors->get('recruitercode')" class="mt-2" />
         </div>
 
@@ -68,38 +68,30 @@
         <div class="mt-4">
             <label for="subunit" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sub Unit</label>
             <select id="subunit" name="subunit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <option value="" disabled selected class="text-gray-400"></option>
+                <option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>
             </select>
         </div>
 
         <script>
-            const countryCities = {
-                blue_chalcedony_direct: ['TEAM  FABIAN (DIRECT)', 'TEAM MERCIDITA FRANCISCO HILARIO', 'Davao'],
-                blue_royals: ['Manila', 'Cebu', 'Davao'],
-                infinity_quest: ['Manila', 'Cebu', 'Davao'],
-                golden_chalcedony: ['Manila', 'Cebu', 'Davao'],
-                chalcedony_heart: ['Manila', 'Cebu', 'Davao'],
-                chalcedony_phoenix: ['Manila', 'Cebu', 'Davao'],
-                chalcedony_supreme: ['Manila', 'Cebu', 'Davao'],
-                chalcedony_elites: ['Manila', 'Cebu', 'Davao'],
-                chalcedony_gems: ['Manila', 'Cebu', 'Davao'],
-                iceberg_solutions_inc: ['Manila', 'Cebu', 'Davao'],
-                chalcedony_archers: ['Manila', 'Cebu', 'Davao'],
-            };
+            const unitSelect = document.getElementById('unit');
+            const subunitSelect = document.getElementById('subunit');
 
-            document.getElementById('country').addEventListener('change', function() {
-                const selected = this.value;
-                const citySelect = document.getElementById('city');
+            unitSelect.addEventListener('change', function () {
+                const selectedUnit = this.value;
+                subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Loading...</option>';
 
-                citySelect.innerHTML = '<option value="">Select City</option>'; // reset
-
-                if (selected && countryCities[selected]) {
-                    countryCities[selected].forEach(city => {
-                        const opt = document.createElement('option');
-                        opt.value = city;
-                        opt.textContent = city;
-                        citySelect.appendChild(opt);
-                    });
+                if (selectedUnit) {
+                    fetch(`/admin/register/${selectedUnit}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>';
+                            data.forEach(sub => {
+                                const option = document.createElement('option');
+                                option.value = sub.id;
+                                option.textContent = sub.name;
+                                subunitSelect.appendChild(option);
+                            });
+                        });
                 }
             });
         </script>
