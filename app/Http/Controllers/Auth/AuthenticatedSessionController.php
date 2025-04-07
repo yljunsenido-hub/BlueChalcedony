@@ -25,13 +25,13 @@ class AuthenticatedSessionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'agent_code' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ]);
 
-        if (!Auth::attempt($request->only('agent_code', 'password'), $request->boolean('remember'))) {
+        if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             throw ValidationException::withMessages([
-                'agent_code' => __('auth.failed'),
+                'email' => __('auth.failed'),
             ]);
         }
 
