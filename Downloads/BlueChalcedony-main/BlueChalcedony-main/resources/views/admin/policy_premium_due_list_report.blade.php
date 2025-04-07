@@ -5,10 +5,10 @@
             </h2>
         </x-slot>
 
-        <div class="py-12">
-<div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-6">
+        <div class="">
+<div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
     <!-- Policies Issued Report -->
-    <div class="bg-gray-600 p-3 text-white text-xl text-center rounded-t-lg">
+    <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
         POLICY PREMIUM DUE LIST REPORT
     </div>
 

@@ -1,11 +1,11 @@
-<nav x-data="{ open: false }" class="sticky top-0 h-16 bg-gray-700 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav x-data="{ open: false }" class="sticky top-0 h-16 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 dark:from-blue-800 dark:via-gray-700 dark:to-gray-800 border-b border-gray-100 dark:border-gray-700">
+    <div class="max-w-9xl mx-auto px-0 sm:px-6 lg:px-3"> <!-- Removed padding on the left side here (px-0) -->
         <div class="flex justify-between h-16 items-center">
-            <!-- Left section: Burger Button + Logo -->
+            <!-- Left section: Logo -->
             <div class="flex items-center space-x-4">
                 <!-- Logo or Branding -->
-                <a href="{{ url('/admin/dashboard') }}" class="flex items-center">
-                    <img src="{{ asset('path-to-logo') }}" class="h-8 w-auto" alt="Logo">
+                <a href="{{ url('/admin/dashboard') }}" class="flex items-center ml-0"> <!-- Add ml-0 to remove any extra left margin -->
+                    <img src="{{ asset('images/bcdqwhitelogo.png') }}" class="h-14 w-auto" alt="Logo">
                 </a>
             </div>
 

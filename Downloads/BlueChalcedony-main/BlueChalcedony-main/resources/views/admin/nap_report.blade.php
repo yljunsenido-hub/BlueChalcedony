@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <!-- NAP Report Section -->
-        <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-10">
-            <div class="bg-gray-600 p-3 text-white text-xl text-center rounded-t-lg">
+        <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
+            <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
                 NAP REPORT
             </div>
 

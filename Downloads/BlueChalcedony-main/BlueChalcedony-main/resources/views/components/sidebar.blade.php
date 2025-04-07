@@ -1,4 +1,4 @@
-<aside class="fixed left-0 top-0 h-full w-64 bg-gray-800 text-white p-4">
+<aside class="fixed top-0 h-full w-64 text-white p-4 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 dark:from-blue-800 dark:via-gray-700 dark:to-gray-800 border-b border-gray-100 dark:border-gray-700">
         <h2 class="text-lg font-semibold">Dashboard</h2>
         <nav class="mt-5 space-y-2">
             @if(auth()->user()->role == 'admin')
