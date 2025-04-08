@@ -1,4 +1,4 @@
-<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-700 to-blue-950 text-white p-4 overflow-y-auto">
+<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto">
     <h2 class="text-lg font-semibold">Dashboard</h2>
     <nav class="mt-5 space-y-2">
         @php $user = auth()->user(); @endphp

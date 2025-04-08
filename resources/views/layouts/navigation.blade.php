@@ -1,11 +1,12 @@
-<nav x-data="{ open: false }" class="sticky top-0 h-16 bg-gray-700 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav x-data="{ open: false }" class="sticky top-0 h-16 bg-gradient-to-l from-blue-600 to-blue-900">
+
+    <div class="max-w-7xl mx-auto pl-2 pr-4 sm:px- lg:px-">
         <div class="flex justify-between h-16 items-center">
             <!-- Left section: Burger Button + Logo -->
             <div class="flex items-center space-x-4">
                 <!-- Logo or Branding -->
                 <a href="{{ url('/admin/dashboard') }}" class="flex items-center">
-                    <img src="{{ asset('path-to-logo') }}" class="h-8 w-auto" alt="Logo">
+                    <img src="{{ asset('images/bcdqwhitelogo.png') }}" class="h-12 w-auto" alt="Logo">
                 </a>
             </div>
 
