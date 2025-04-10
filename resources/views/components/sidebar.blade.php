@@ -237,7 +237,7 @@
             const icon = button.querySelector('svg');
             const isOpen = dropdown.classList.contains('max-h-[1000px]');
             const role = button.dataset.role;
-
+            //a
             // Close all dropdowns
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 menu.classList.remove('max-h-[1000px]', 'opacity-100', 'scale-y-100');
