@@ -11,7 +11,7 @@ class IssuedReportController extends Controller
 {
     public function index()
     {
-        $posts = IssuedReport::all(); // Fetch all records from the database
+        $posts = IssuedReport::paginate(5); // Fetch all records from the database
         return view('admin.dashboard', compact('posts'));
     }
 

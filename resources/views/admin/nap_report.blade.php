@@ -47,6 +47,12 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <!-- Pagination Links -->
+                <div class="p-4">
+                    {{-- Ensure pagination controls are displayed --}}
+                    {{ $napPosts->links() }}
+                </div>
             </div>
         </div>
 </x-app-layout>

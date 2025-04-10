@@ -11,7 +11,8 @@ class NapReportUploadController extends Controller
 {
     public function index_NapReport()
     {
-        $napPosts = NapReportUpload::all();
+        // Paginate with 20 items per page
+        $napPosts = NapReportUpload::paginate(10);
         return view('admin.nap_report', compact('napPosts'));
     }
 

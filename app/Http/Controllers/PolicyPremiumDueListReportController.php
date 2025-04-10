@@ -11,7 +11,7 @@ class PolicyPremiumDueListReportController extends Controller
 {
     public function index_policyPremiumDueList()
     {
-        $policyPremiumPosts = PolicyPremiumDueListReport::all();
+        $policyPremiumPosts = PolicyPremiumDueListReport::paginate(10);
         return view('admin.policy_premium_due_list_report', compact('policyPremiumPosts'));
     }
 
