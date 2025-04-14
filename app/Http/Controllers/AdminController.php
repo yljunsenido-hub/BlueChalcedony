@@ -41,4 +41,10 @@ class AdminController extends Controller
     {
         return view('admin.policy_premium_due_list_report');
     }
+
+
+    public function index_BatchPhotosUpload()
+    {
+        return view('admin.batch_photos_upload');
+    }
 }

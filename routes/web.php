@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/nap_report', [NapReportUploadController::class, 'index_NapReport']);
         Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
+        Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);
