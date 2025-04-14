@@ -1,4 +1,4 @@
-<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto">
+z<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto">
     <h2 class="text-lg font-semibold">Blue Chalcedony Quartz</h2>
     <nav class="mt-5 space-y-2">
         @php $user = auth()->user(); @endphp
@@ -58,6 +58,10 @@
                         <a href="{{ url('/admin/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/dashboard') ? 'bg-blue-600' : '' }}">Issued Report</a>
                         <a href="{{ url('/admin/nap_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report') ? 'bg-blue-600' : '' }}">Nap Report</a>
                         <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report') ? 'bg-blue-600' : '' }}">Policy Premium Report</a>
+                        <a href="{{ url('/admin/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/issued_report_upload') ? 'bg-blue-600' : '' }}">Issued Report Upload</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report_upload') ? 'bg-blue-600' : '' }}">Nap Report Upload</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report_upload') ? 'bg-blue-600' : '' }}">Policy Premium Due List Report Upload</a>
+                        <a href="{{ url('/admin/register') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/register') ? 'bg-blue-600' : '' }}">Register</a>
                     </div>
                 </div>
             </div>
@@ -137,7 +141,7 @@
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
                         <a href="{{ url('admin/bcms/poster-template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
                         <a href="{{ url('admin/bcms/poster') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
-                        <a href="{{ url('/admin/register') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
+                        <a href="{{ url('admin/bcms/agent') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
                         <a href="{{ url('admin/bcms/unit') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
                         <a href="{{ url('admin/bcms/submission') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/submission') ? 'bg-blue-600' : '' }}">Sub-Unit Submission/Policy Record</a>
                         <a href="{{ url('admin/bcms/digital-card') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/digital-card') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
@@ -184,7 +188,7 @@
                     </div>
                 </div>
             </div>
-
+            
         @elseif($user->role == 'unit_manager')
             @php $umOpen = request()->is('unit-manager/*'); @endphp
             <div class="relative group">
@@ -252,12 +256,6 @@
                 dropdown.classList.add('max-h-[1000px]', 'opacity-100', 'scale-y-100');
                 icon.classList.add('rotate-180');
 
-                // Apply background color based on role
-                if (role === 'admin') {
-                    button.classList.add('bg-blue-200/30');
-                } else {
-                    button.classList.add('bg-gray-700/60');
-                }
             }
         });
     });

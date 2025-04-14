@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="p-6">
+    <div class="">
         <div class="max-w-3xl mx-auto lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-4">
                 <div class="p-10 text-gray-900 dark:text-gray-100 flex justify-center">

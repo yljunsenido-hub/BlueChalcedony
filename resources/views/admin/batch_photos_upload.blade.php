@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="p-6">
+    <div class="">
         <div class="max-w-4xl mx-auto lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-4">
                 <div class="p-10 text-gray-900 dark:text-gray-100 flex justify-center">
@@ -38,14 +38,10 @@
                                     UPLOAD CSV
                                 </button>
                             </div>
-                <!-- Date Range Text Section -->
-                <div class="flex flex-col items-center mt-4">
-                                <p class="text-gray-700 text-sm text-center">
-                                    Please upload data from 
-                                    <span class="font-semibold text-blue-600" id="start-date"></span> 
-                                    to 
-                                    <span class="font-semibold text-blue-600" id="end-date"></span>
-                                </p>
+                
+                            <!-- Image Below the Buttons -->
+                            <div class="flex justify-center mt-6">
+                                <img src="/images/imageguide.png" alt="Batch Upload Illustration" class="w-auto rounded-lg shadow-md">
                             </div>
 
                             <!-- Success Message -->

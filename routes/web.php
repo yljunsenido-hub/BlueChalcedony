@@ -13,6 +13,7 @@ use App\Http\Controllers\AgentController;
 
 // Controllers
 use App\Http\Controllers\SubUnitsController;
+use App\Http\Controllers\AdminRegisterController;   
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
 use App\Http\Controllers\PolicyPremiumDueListReportController;
@@ -34,7 +35,6 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => ['role:admin']], function () {
-        Route::get('/admin/register', [RegisteredUserController::class, 'index_Register']);
         Route::get('/admin/dashboard', [AdminController::class, 'index']);
         Route::get('/admin/dashboard', [IssuedReportController::class, 'index']);
         Route::get('/admin/issued_report_upload', [AdminController::class, 'index_IssuedReportUpload']);
@@ -42,7 +42,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/nap_report', [NapReportUploadController::class, 'index_NapReport']);
         Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
+
+        //new file added
         Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
+        Route::get('/admin/update_submission_policy_record', [AdminController::class, 'index_UpdateSubmissionPolicyRecord']);
+        //end
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);
@@ -55,6 +59,10 @@ Route::middleware(['auth'])->group(function () {
 
 
         Route::get('/admin/register/{unit_key}', [SubUnitsController::class, 'getSubUnits']);
+
+
+        Route::get('/admin/register', [AdminRegisterController::class, 'create'])->name('admin.register');
+        Route::post('/admin/register', [AdminRegisterController::class, 'store'])->name('admin.register.store');
     });
 
     Route::group(['middleware' => ['role:agent']], function () {
