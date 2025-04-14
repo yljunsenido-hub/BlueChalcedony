@@ -161,10 +161,10 @@ z<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 t
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $branchoperationOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Issued</a>
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload NAP</a>
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Due List</a>
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Batch Photos</a>
+                        <a href="{{ url('/admin/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Issued</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload NAP</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Due List</a>
+                        <a href="{{ url('/admin/batch_photos_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Batch Photos</a>
                         <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Update Submission/Policy Record</a>
                     </div>
                 </div>
@@ -188,7 +188,7 @@ z<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 t
                     </div>
                 </div>
             </div>
-
+            
         @elseif($user->role == 'unit_manager')
             @php $umOpen = request()->is('unit-manager/*'); @endphp
             <div class="relative group">
@@ -256,12 +256,6 @@ z<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 t
                 dropdown.classList.add('max-h-[1000px]', 'opacity-100', 'scale-y-100');
                 icon.classList.add('rotate-180');
 
-                // Apply background color based on role
-                if (role === 'admin') {
-                    button.classList.add('bg-blue-200/30');
-                } else {
-                    button.classList.add('bg-gray-700/60');
-                }
             }
         });
     });

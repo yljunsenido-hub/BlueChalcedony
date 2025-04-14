@@ -43,8 +43,14 @@ class AdminController extends Controller
     }
 
 
+    //new added
     public function index_BatchPhotosUpload()
     {
         return view('admin.batch_photos_upload');
+    }
+
+    public function index_UpdateSubmissionPolicyRecord()
+    {
+        return view('admin.update_submission_policy_record');
     }
 }
