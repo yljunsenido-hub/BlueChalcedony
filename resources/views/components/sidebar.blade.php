@@ -161,7 +161,7 @@
                         <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload NAP</a>
                         <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Due List</a>
                         <a href="{{ url('/admin/batch_photos_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Batch Photos</a>
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Update Submission/Policy Record</a>
+                        <a href="{{ url('/admin/update_submission_policy_record') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Update Submission/Policy Record</a>
                     </div>
                 </div>
             </div>
