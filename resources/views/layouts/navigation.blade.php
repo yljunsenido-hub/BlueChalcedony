@@ -1,17 +1,17 @@
 <nav x-data="{ open: false }" class="sticky top-0 h-16 bg-gradient-to-l from-blue-600 to-blue-900">
-    <div class="w-full">
-        <div class="flex justify-between h-16 items-center px-0">
-            <!-- Left section: Title + Logo -->
-            <div class="flex items-center space-x-1 pl-2"> <!-- 👈 changed pl-6 to pl-8 for more space -->
+
+    <div class="max-w-7xl mx-auto pl-2 pr-4 sm:px- lg:px-">
+        <div class="flex justify-between h-16 items-center">
+            <!-- Left section: Burger Button + Logo -->
+            <div class="flex items-center space-x-4">
+                <!-- Logo or Branding -->
                 <a href="{{ url('/admin/dashboard') }}" class="flex items-center">
                     <img src="{{ asset('images/bcdqwhitelogo.png') }}" class="h-12 w-auto" alt="Logo">
                 </a>
-                <h2 class="text-white text-lg font-bold ">Blue Chalcedony Quartz</h2>
-                
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6 pr-4">
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
@@ -33,7 +33,8 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault(); this.closest('form').submit();">
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>

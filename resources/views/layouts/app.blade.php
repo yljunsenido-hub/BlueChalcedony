@@ -14,23 +14,22 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased overflow-x-hidden w-full h-screen relative">
-    
-    <!-- Sidebar (fixed and floating) -->
-    @include('components.sidebar')
+<body class="font-sans antialiased overflow-x-hidden w-full h-screen">
+    <div class="flex">
+        <!-- Include the sidebar -->
+        @include('components.sidebar')  
 
-    <!-- Main Content -->
-    <div class="min-h-screen w-full transition-all duration-300 ease-in-out">
-
+        <!-- Main Content -->
+    <div class="flex-1 pl-64 min-h-screen w-full">
         <!-- Navigation -->
         @include('layouts.navigation')
 
+
         <!-- Page Content -->
-        <main class="p-6 ml-64">
+        <main class="p-6">
             {{ $slot }}
         </main>
     </div>
 
 </body>
-
 </html>
