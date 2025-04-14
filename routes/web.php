@@ -13,6 +13,7 @@ use App\Http\Controllers\AgentController;
 
 // Controllers
 use App\Http\Controllers\SubUnitsController;
+use App\Http\Controllers\AdminRegisterController;   
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
 use App\Http\Controllers\PolicyPremiumDueListReportController;
@@ -34,7 +35,6 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => ['role:admin']], function () {
-        Route::get('/admin/register', [RegisteredUserController::class, 'index_Register']);
         Route::get('/admin/dashboard', [AdminController::class, 'index']);
         Route::get('/admin/dashboard', [IssuedReportController::class, 'index']);
         Route::get('/admin/issued_report_upload', [AdminController::class, 'index_IssuedReportUpload']);
@@ -54,6 +54,10 @@ Route::middleware(['auth'])->group(function () {
 
 
         Route::get('/admin/register/{unit_key}', [SubUnitsController::class, 'getSubUnits']);
+
+
+        Route::get('/admin/register', [AdminRegisterController::class, 'create'])->name('admin.register');
+        Route::post('/admin/register', [AdminRegisterController::class, 'store'])->name('admin.register.store');
     });
 
     Route::group(['middleware' => ['role:agent']], function () {
