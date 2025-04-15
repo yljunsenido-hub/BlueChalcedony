@@ -1,8 +1,6 @@
 <x-app-layout>
     <form method="POST" action="{{ route('admin.register.store') }}">
         @csrf
-        ff
-        Sampleeeeee
         <!-- Agent Code -->
         <div class="mt-4">
             <x-input-label for="agent_code" :value="__('Agent Code')" />
