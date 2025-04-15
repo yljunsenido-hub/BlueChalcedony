@@ -44,6 +44,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
         Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
 
+        // Reports
+        Route::get('/admin/agentMTD', [AdminController::class, 'index_AgentMTD']);
+        Route::get('/admin/agentYTD', [AdminController::class, 'index_AgentYTD']);
+        Route::get('/admin/subUnitSummary', [AdminController::class, 'index_SubUnitSummary'])->name('admin.subUnitSummary');
+        Route::get('/admin/subUnitSummaryYTD', [AdminController::class, 'index_SubUnitSummaryYTD'])->name('admin.subUnitSummaryYTD');
+
+
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);
 

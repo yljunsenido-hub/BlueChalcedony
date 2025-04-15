@@ -47,4 +47,24 @@ class AdminController extends Controller
     {
         return view('admin.batch_photos_upload');
     }
+
+    public function index_AgentMTD()
+    {
+        return view('admin.agentMTD');
+    }
+
+    public function index_AgentYTD()
+    {
+        return view('admin.agentYTD');
+    }
+
+    public function index_SubUnitSummary()
+    {
+        return view('admin.sub_unit_summary');
+    }
+
+    public function index_SubUnitSummaryYTD()
+    {
+        return view('admin.sub_unit_summaryYTD');
+    }
 }
