@@ -1,199 +1,264 @@
-<x-app-layout>
-    <form method="POST" action="{{ route('admin.register.store') }}">
-        @csrf
-        <!-- Agent Code -->
-        <div class="mt-4">
-            <x-input-label for="agent_code" :value="__('Agent Code')" />
-            <x-text-input id="agent_code" class="block mt-1 w-full" type="text" name="agent_code" :value="old('agent_code')" required autofocus autocomplete="agent_code" />
-            <x-input-error :messages="$errors->get('agent_code')" class="mt-2" />
-        </div>
+<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto">
+    <h2 class="text-lg font-semibold">Blue Chalcedony Quartz</h2>
+    <nav class="mt-5 space-y-2">
+        @php $user = auth()->user(); @endphp
 
-        <!-- Recruiter Code -->
-        <div class="mt-4">
-            <x-input-label for="recruiter_code" :value="__('Recruiter Code')" />
-            <x-text-input id="recruiter_code" class="block mt-1 w-full" type="text" name="recruiter_code" :value="old('recruiter_code')" />
-            <x-input-error :messages="$errors->get('recruiter_code')" class="mt-2" />
-        </div>
+        @if($user->role == 'admin')
+            
+        <h2 class="text-s font-semibold">Operations</h2>
 
-        <!-- Role -->
-        <div class="mt-4">
-             <label for="role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Role</label>
-             <select id="role" name="role" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                 <option value="" disabled selected class="text-gray-400"></option>
-                 <option value="admin">Admin</option>
-                 <option value="agent">Agent</option>
-                 <option value="unit_manager">Unit Manager</option>
-                 <option value="branch_manager">Unit Manager Aspirant</option>
-                 <option value="assistant_unit_manager">Assistant Unit Manager</option>
-                 <option value="financial_advisor">Financial Advisor</option>
-                 <option value="unit_operations">Unit Operations</option>
-                 <option value="branch_manager">Branch Manager</option>
-                 <option value="senior_assistant_unit_manager">Senior Assistant Unit Manager</option>
-                 <option value="branch_manager_operations">Branch Manager Operations</option>
-                 <option value="branch_nb_officer">Branch NB Officer</option>
-                 <option value="junior_unit_manager">Junior Unit Manager</option>
-             </select>
-         </div>
-                    
-        <!-- Branch -->
-        <div class="mt-4">
-             <label for="branch" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Branch</label>
-             <select id="branch" name="branch" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                 <option value="" disabled selected class="text-gray-400"></option>
-                 <option value="blue_chalcedony_quartz_branch">BLUE CHALCEDONY QUARTZ BRANCH</option>
-             </select>
-         </div>
+            <!-- Leads & Cases -->
+            @php $leadscasesOpen = request()->is('admin/recruitment/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $leadscasesOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Leads & Cases</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $leadscasesOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $leadscasesOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submitted Cases</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Outreq Cases</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Declined/Postponed Cases</a>
+                    </div>
+                </div>
+            </div>
 
-         <!-- Unit -->
-         <div class="mt-4">
-             <label for="unit" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Unit</label>
-             <select id="unit" name="unit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                 <option value="" disabled selected class="text-gray-400"></option>
-                 <option value="blue_chalcedony_direct">BLUE CHALCEDONY DIRECT</option>
-                 <option value="blue_royals">BLUE ROYALS</option>
-                 <option value="infinity_quest">INFINITY QUEST</option>
-                 <option value="golden_chalcedony">GOLDEN CHALCEDONY</option>
-                 <option value="chalcedony_heart">CHALCEDONY HEART</option>
-                 <option value="chalcedony_phoenix">CHALCEDONY PHOENIX</option>
-                 <option value="chalcedony_supreme">CHALCEDONY SUPREME</option>
-                 <option value="chalcedony_elites">CHALCEDONY ELITES</option>
-                 <option value="chalcedony_gems">CHALCEDONY GEMS</option>
-                 <option value="iceberg_solutions_inc">ICEBERG SOLUTIONS INC</option>
-                 <option value="chalcedony_archers">CHALCEDONY ARCHERS</option>
-             </select>
-         </div>
+            <!-- New Business -->
+            @php $newbusinessOpen = request()->is('admin/recruitment/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $newbusinessOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>New Business</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $newbusinessOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $newbusinessOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submission Approval</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">New Business Maintenance</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Sub Unit -->
-        <div class="mt-4">
-            <label for="sub_unit" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sub Unit</label>
-            <select id="sub_unit" name="sub_unit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>
-            </select>
-        </div>
+            <!-- Reports -->
+            @php $adminOpen = request()->is('admin/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $adminOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Reports</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $adminOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $adminOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('/admin/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/dashboard') ? 'bg-blue-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/admin/nap_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report') ? 'bg-blue-600' : '' }}">Nap Report</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report') ? 'bg-blue-600' : '' }}">Policy Premium Report</a>
+                    </div>
+                </div>
+            </div>
 
-        <script>
-             const unitSelect = document.getElementById('unit');
-             const subunitSelect = document.getElementById('sub_unit');
- 
-             unitSelect.addEventListener('change', function () {
-                 const selectedUnit = this.value;
-                 subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Loading...</option>';
- 
-                 if (selectedUnit) {
-                     fetch(`/admin/register/${selectedUnit}`)
-                         .then(response => response.json())
-                         .then(data => {
-                             subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>';
-                             data.forEach(sub => {
-                                 const option = document.createElement('option');
-                                 option.value = sub.id;
-                                 option.value = sub.name;
-                                 option.textContent = sub.name;
-                                 subunitSelect.appendChild(option);
-                             });
-                         });
-                 }
-             });
-         </script>
+            <!-- Marketing -->
+            @php $marketingOpen = request()->is('admin/recruitment/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $marketingOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Marketing</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $marketingOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $marketingOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Marketing Poster</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- First Name -->
-        <div class="mt-4">
-            <x-input-label for="first_name" :value="__('First Name')" />
-            <x-text-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="firstname" />
-            <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
-        </div>
+            <!-- Proposal Bank -->
+            @php $proposalbankOpen = request()->is('admin/recruitment/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $proposalbankOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Proposal Bank</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $proposalbankOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $proposalbankOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Recruit</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Recruitment Process</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Middle Name -->
-        <div class="mt-4">
-            <x-input-label for="middle_name" :value="__('Middle Name')" />
-            <x-text-input id="middle_name" class="block mt-1 w-full" type="text" name="middle_name" :value="old('middle_name')" required autofocus autocomplete="middlename" />
-            <x-input-error :messages="$errors->get('middle_name')" class="mt-2" />
-        </div>
+            <!-- Recruitment -->
+            @php $recruitmentOpen = request()->is('admin/recruitment/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $recruitmentOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Recruitment</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $recruitmentOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $recruitmentOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-issued') ? 'bg-blue-600' : '' }}">Recruit</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-nap') ? 'bg-blue-600' : '' }}">Recruitment Process</a>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- Appointments Section -->
+            @php $appointmentsOpen = request()->is('admin/appointments/*'); @endphp
+            <div class="relative group">
+                <a href="{{ url('/admin/appointments') }}" data-role="admin"
+                   class="w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $appointmentsOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Appointments</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19l7-7-7-7"/>
+                    </svg>      
+                </a>
+            </div>
 
-        <!-- Last Name -->
-        <div class="mt-4">
-            <x-input-label for="last_name" :value="__('Last Name')" />
-            <x-text-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="lastname" />
-            <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
-        </div>
+            <!-- BCMS Maintenance Section -->
+            @php $bcmsOpen = request()->is('admin/bcms/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $bcmsOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>BCMS Maintenance</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $bcmsOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $bcmsOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('admin/bcms/poster-template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
+                        <a href="{{ url('admin/bcms/poster') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
+                        <a href="{{ url('/admin/register') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
+                        <a href="{{ url('admin/bcms/unit') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
+                        <a href="{{ url('admin/bcms/submission') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/submission') ? 'bg-blue-600' : '' }}">Sub-Unit Submission/Policy Record</a>
+                        <a href="{{ url('admin/bcms/digital-card') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/digital-card') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
+                        <a href="{{ url('admin/bcms/scheduled-tasks') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/scheduled-tasks') ? 'bg-blue-600' : '' }}">Scheduled Tasks</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Display Name -->
-        <div class="mt-4">
-            <x-input-label for="display_name" :value="__('Display Name (Set by Branch)')" />
-            <x-text-input id="display_name" class="block mt-1 w-full" type="text" name="display_name" :value="old('display_name')" required autofocus autocomplete="displayname    " />
-            <x-input-error :messages="$errors->get('display_name')" class="mt-2" />
-        </div>
+            <!-- Branch Operations Utility Section -->
+            @php $branchoperationOpen = request()->is('admin/branchoperation/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $branchoperationOpen ? 'bg-blue-200/30' : '' }}">
+                    <span>Branch Operations Utility</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $branchoperationOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $branchoperationOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+                        <a href="{{ url('/admin/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Issued</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload NAP</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Due List</a>
+                        <a href="{{ url('/admin/batch_photos_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Batch Photos</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Update Submission/Policy Record</a>
+                    </div>
+                </div>
+            </div>
+           
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        @elseif($user->role == 'branch_manager')
+            @php $bmOpen = request()->is('branch-manager/*'); @endphp
+            <div class="relative group">
+                <button data-role="bm" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-gray-600/30 {{ $bmOpen ? 'bg-gray-700/60' : '' }}">
+                    <span>Branch Manager Reports</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $bmOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $bmOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-gray-700/60 rounded-lg p-2">
+                        <a href="{{ url('/branch-manager/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('branch-manager/dashboard') ? 'bg-gray-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/branch-manager/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('branch-manager/issued_report_upload') ? 'bg-gray-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('admin/nap_report_upload') ? 'bg-gray-600' : '' }}">Nap Report Upload</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Mobile -->
-        <div class="mt-4">
-            <x-input-label for="mobile" :value="__('Mobile')" />
-            <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="mobile" :value="old('mobile')" required autofocus autocomplete="mobile" />
-            <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
-        </div>
+        @elseif($user->role == 'unit_manager')
+            @php $umOpen = request()->is('unit-manager/*'); @endphp
+            <div class="relative group">
+                <button data-role="um" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-gray-600/30 {{ $umOpen ? 'bg-gray-700/60' : '' }}">
+                    <span>Unit Manager Reports</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $umOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $umOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-gray-700/60 rounded-lg p-2">
+                        <a href="{{ url('/unit-manager/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('unit-manager/dashboard') ? 'bg-gray-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/unit-manager/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('unit-manager/issued_report_upload') ? 'bg-gray-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('admin/nap_report_upload') ? 'bg-gray-600' : '' }}">Nap Report Upload</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Coding Date -->
-        <div class="mt-4">
-            <x-input-label for="coding_date" :value="__('Coding Date (YYYY-MM-DD)')" />
-            <x-text-input id="coding_date" class="block mt-1 w-full" type="text" name="coding_date" :value="old('coding_date')" required autofocus autocomplete="codingdate" />
-            <x-input-error :messages="$errors->get('coding_date')" class="mt-2" />
-        </div>
+        @elseif($user->role == 'agent')
+            @php $agentOpen = request()->is('agent/*'); @endphp
+            <div class="relative group">
+                <button data-role="agent" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-gray-600/30 {{ $agentOpen ? 'bg-gray-700/60' : '' }}">
+                    <span>Agent Reports</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $agentOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $agentOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 bg-gray-700/60 rounded-lg p-2">
+                        <a href="{{ url('/agent/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('agent/dashboard') ? 'bg-gray-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/agent/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('agent/issued_report_upload') ? 'bg-gray-600' : '' }}">Issued Report</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-gray-600 {{ request()->is('admin/nap_report_upload') ? 'bg-gray-600' : '' }}">Nap Report Upload</a>
+                    </div>
+                </div>
+            </div>
+        @endif
+    </nav>
+</aside>
 
-        <!-- Agent Status -->
-        <div class="mt-4">
-            <label for="agent_status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Agent Status</label>
-            <select id="agent_status" name="agent_status" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <option value="" disabled selected class="text-gray-400"></option>
-                <option value="active">ACTIVE</option>
-                <option value="delisted">DELISTED</option>
-                <option value="operations">OPERATIONS</option>
-            </select>
-        </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                type="password"
-                name="password"
-                required autocomplete="new-password" />
+<script>
+    document.querySelectorAll('.dropdown-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const dropdown = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            const isOpen = dropdown.classList.contains('max-h-[1000px]');
+            const role = button.dataset.role;
+            //a
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('max-h-[1000px]', 'opacity-100', 'scale-y-100');
+                menu.classList.add('max-h-0', 'opacity-0', 'scale-y-95');
+            });
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            // Reset all dropdown buttons
+            document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+                btn.classList.remove('bg-blue-200/30', 'bg-gray-700/60');
+                btn.querySelector('svg').classList.remove('rotate-180');
+            });
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            // Open the clicked dropdown if not already open
+            if (!isOpen) {
+                dropdown.classList.remove('max-h-0', 'opacity-0', 'scale-y-95');
+                dropdown.classList.add('max-h-[1000px]', 'opacity-100', 'scale-y-100');
+                icon.classList.add('rotate-180');
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <!-- Name -->
-        <div class="mt-4">
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-        
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Create') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-app-layout>
+                // Apply background color based on role
+                if (role === 'admin') {
+                    button.classList.add('bg-blue-200/30');
+                } else {
+                    button.classList.add('bg-gray-700/60');
+                }
+            }
+        });
+    });
+</script>
