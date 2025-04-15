@@ -123,7 +123,7 @@
                     subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Loading...</option>';
 
                     if (selectedUnit) {
-                        fetch(`/admin/register/${selectedUnit}`)
+                        fetch(/admin/register/${selectedUnit})
                             .then(response => response.json())
                             .then(data => {
                                 subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>';
