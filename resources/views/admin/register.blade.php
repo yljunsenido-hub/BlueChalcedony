@@ -1,7 +1,7 @@
 <x-app-layout>
     <form method="POST" action="{{ route('admin.register.store') }}">
         @csrf
-
+        ff
         Sampleeeeee
         <!-- Agent Code -->
         <div class="mt-4">
