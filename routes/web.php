@@ -17,6 +17,8 @@ use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\IssuedReportController;
 use App\Http\Controllers\NapReportUploadController;
 use App\Http\Controllers\PolicyPremiumDueListReportController;
+use App\Http\Controllers\BatchPhotosUploadController;
+use App\Http\Controllers\UpdateSubmissionPolicyRecordController;
 
 
 Route::get('/dashboard', function () {
@@ -42,7 +44,21 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/nap_report', [NapReportUploadController::class, 'index_NapReport']);
         Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
+
+        //new
+            //BOU
         Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
+        Route::get('/admin/update_submission_policy_record', [AdminController::class, 'index_UpdateSubmissionPolicyRecord']);
+            //Lead&Cases
+        Route::get('/admin/submitted_cases', [AdminController::class, 'index_SubmittedCases']);
+        Route::get('/admin/issued_cases', [AdminController::class, 'index_IssuedCases']);
+        Route::get('/admin/outreq_cases', [AdminController::class, 'index_OutreqCases']);
+        Route::get('/admin/declined_postponed_cases', [AdminController::class, 'index_DeclinedPostponedCases']);
+            //NewBusinessMaintenance
+        Route::get('/admin/submission_approval', [AdminController::class, 'index_SubmissionApproval']);
+        Route::get('/admin/new_business_maintenance', [AdminController::class, 'index_NewBusinessMaintenance']);
+        Route::get('/admin/issued_cases_nb', [AdminController::class, 'index_IssuedCasesNb']);
+        //end
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);

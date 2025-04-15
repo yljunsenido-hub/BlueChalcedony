@@ -7,7 +7,7 @@
             </div>
 
             <div class="bg-blue-900 text-white shadow-lg rounded-lg p-1 mb-3 pl-2 ">
-            Update Submission / Policy Record
+                Agents Submission for Approval
             </div>
 
             <div class="overflow-x-auto">

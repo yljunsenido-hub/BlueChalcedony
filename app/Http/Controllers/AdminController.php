@@ -43,8 +43,54 @@ class AdminController extends Controller
     }
 
 
+    //new
+    //BOU
     public function index_BatchPhotosUpload()
     {
         return view('admin.batch_photos_upload');
     }
+
+    public function index_UpdateSubmissionPolicyRecord()
+    {
+        return view('admin.update_submission_policy_record');
+    }
+
+    //Lead&Cases
+    public function index_SubmittedCases()
+    {
+        return view('admin.submitted_cases');
+    }
+
+    public function index_IssuedCases()
+    {
+        return view('admin.issued_cases');
+    }
+
+    public function index_OutreqCases()
+    {
+        return view('admin.outreq_cases');
+    }
+
+    public function index_DeclinedPostponedCases()
+    {
+        return view('admin.declined_postponed_cases');
+    }
+
+    //NewBusiness
+    public function index_SubmissionApproval()
+    {
+        return view('admin.submission_approval');
+    }
+
+    public function index_NewBusinessMaintenance()
+    {
+        return view('admin.new_business_maintenance');
+    }
+
+    public function index_IssuedCasesNb()
+    {
+        return view('admin.issued_cases_nb');
+    }
+
+    //end
 }

@@ -38,21 +38,12 @@
                                     UPLOAD CSV
                                 </button>
                             </div>
-                <!-- Date Range Text Section -->
-                <div class="flex flex-col items-center mt-4">
-                                <p class="text-gray-700 text-sm text-center">
-                                    Please upload data from 
-                                    <span class="font-semibold text-blue-600" id="start-date"></span> 
-                                    to 
-                                    <span class="font-semibold text-blue-600" id="end-date"></span>
-                                </p>
+                
+                            <!-- Image Section -->
+                                <div class="flex justify-center mt-4">
+                                    <img src="public\images\imageguide.png" alt="Image Guide" class="rounded-md shadow-md">
+                                </div>
                             </div>
-
-                            <!-- Success Message -->
-                            <div id="upload-success" class="hidden text-green-600 text-center mt-4">
-                                <p>File uploaded successfully!</p>
-                            </div>
-                        </div>
 
                         <!-- Confirmation Modal -->
                         <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
