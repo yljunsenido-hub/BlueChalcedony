@@ -96,6 +96,66 @@
              });
          </script>
 
+        <!-- First Name -->
+        <div class="mt-4">
+            <x-input-label for="first_name" :value="__('First Name')" />
+            <x-text-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="firstname" />
+            <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
+         </div>
+
+         <!-- Middle Name -->
+         <div class="mt-4">
+             <x-input-label for="middle_name" :value="__('Middle Name')" />
+             <x-text-input id="middle_name" class="block mt-1 w-full" type="text" name="middle_name" :value="old('middle_name')" required autofocus autocomplete="middlename" />
+             <x-input-error :messages="$errors->get('middle_name')" class="mt-2" />
+         </div>
+
+         <!-- Last Name -->
+         <div class="mt-4">
+             <x-input-label for="last_name" :value="__('Last Name')" />
+             <x-text-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="lastname" />
+             <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
+         </div>
+
+         <!-- Display Name -->
+         <div class="mt-4">
+             <x-input-label for="display_name" :value="__('Display Name (Set by Branch)')" />
+             <x-text-input id="display_name" class="block mt-1 w-full" type="text" name="display_name" :value="old('display_name')" required autofocus autocomplete="displayname    " />
+             <x-input-error :messages="$errors->get('display_name')" class="mt-2" />
+         </div>
+
+         <!-- Email Address -->
+         <div class="mt-4">
+             <x-input-label for="email" :value="__('Email')" />
+             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+         </div>
+
+         <!-- Mobile -->
+         <div class="mt-4">
+             <x-input-label for="mobile" :value="__('Mobile')" />
+             <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="mobile" :value="old('mobile')" required autofocus autocomplete="mobile" />
+             <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
+         </div>
+
+         <!-- Coding Date -->
+         <div class="mt-4">
+             <x-input-label for="coding_date" :value="__('Coding Date (YYYY-MM-DD)')" />
+             <x-text-input id="coding_date" class="block mt-1 w-full" type="text" name="coding_date" :value="old('coding_date')" required autofocus autocomplete="codingdate" />
+             <x-input-error :messages="$errors->get('coding_date')" class="mt-2" />
+         </div>
+
+        <!-- Agent Status -->
+        <div class="mt-4">
+             <label for="agent_status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Agent Status</label>
+             <select id="agent_status" name="agent_status" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                 <option value="" disabled selected class="text-gray-400"></option>
+                 <option value="active">ACTIVE</option>
+                 <option value="delisted">DELISTED</option>
+                 <option value="operations">OPERATIONS</option>
+             </select>
+         </div>
+
             <!-- Bottom Section (Full Width) -->
             <div class="mt-6">
                 <!-- Password -->
