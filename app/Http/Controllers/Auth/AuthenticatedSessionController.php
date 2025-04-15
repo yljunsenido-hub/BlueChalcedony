@@ -45,6 +45,12 @@ class AuthenticatedSessionController extends Controller
             return redirect('/branch-manager/dashboard');
         } elseif ($user->role == 'unit_manager') {
             return redirect('/unit-manager/dashboard');
+        } elseif ($user->role == 'assistant_unit_manager') {
+            return redirect('/assistant_unit_manager/dashboard');
+        } elseif ($user->role == 'financial_advisor') {
+            return redirect('/financial_advisor/dashboard');
+        } elseif ($user->role == 'unit_operations') {
+            return redirect('/unit-operations/dashboard');
         } else {
             return redirect('/agent/dashboard');
         }
