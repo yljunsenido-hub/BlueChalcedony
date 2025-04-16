@@ -111,6 +111,9 @@ class AdminController extends Controller
 
     //end
 
+
+    // Reports
+
     public function index_AgentMTD()
     {
         return view('admin.agentMTD');
@@ -139,5 +142,10 @@ class AdminController extends Controller
     public function index_UnitSummaryYTD()
     {
         return view('admin.unit_summaryYTD');
+    }
+
+    public function index_BranchSummary()
+    {
+        return view('admin.branch_summary');
     }
 }

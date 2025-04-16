@@ -62,6 +62,7 @@
                         <a href="{{ url('/admin/agentYTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentYTD') ? 'bg-blue-600' : '' }}">Agent YTD</a>
                         <a href="{{ url('/admin/subUnitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/subUnitSummary') ? 'bg-blue-600' : '' }}">Sub-Unit Summary</a>
                         <a href="{{ url('/admin/unitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitSummary') ? 'bg-blue-600' : '' }}">Unit Summary</a>
+                        <a href="{{ url('/admin/branchSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchSummary') ? 'bg-blue-600' : '' }}">Branch Summary</a>
                     
                     </div>
                 </div>

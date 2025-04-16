@@ -75,7 +75,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/subUnitSummaryYTD', [AdminController::class, 'index_SubUnitSummaryYTD'])->name('admin.subUnitSummaryYTD');
         Route::get('/admin/unitSummary', [AdminController::class, 'index_UnitSummary'])->name('admin.unitSummary');
         Route::get('/admin/unitSummaryYTD', [AdminController::class, 'index_UnitSummaryYTD'])->name('admin.unitSummaryYTD');
-
+        Route::get('/admin/branchSummary', [AdminController::class, 'index_BranchSummary']);
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);
