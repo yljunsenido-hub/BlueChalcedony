@@ -12,13 +12,13 @@
 
         <div class="container mx-auto rounded-md shadow-sm bg-white border pl-3 pr-3 pt-3 pb-3 mb-2 flex flex-col space-y-5">
 
-            <!-- Year and Month Selection Section -->
+            <!-- Year Selection Section -->
             <div class="container mx-auto rounded-md shadow-sm bg-blue-900 border pt-2 pb-2 flex items-center justify-between"> <!-- Added justify-between -->
-                <a href="{{ route('admin.unitSummaryYTD') }}">
-                    <p class="ml-4 text-yellow-300 hover:underline hover:text-white">Switch To YTD</p> </h1>
+                <a href="{{ route('admin.unitSummary') }}">
+                    <p class="ml-4 text-yellow-300 hover:underline hover:text-white">Switch To MTD</p> </h1>
                 </a>
             <div class="flex space-x-5 mr-3"> <!-- Removed justify-end -->
-                <select id="yearSelect" class="border border-gray-300 rounded-md p-1 w-40">
+                <select id="yearSelect" class="border border-gray-300 rounded-md w-40">
                     <option value="10">2025</option>
                     <option value="25">2024</option>
                     <option value="50">2023</option>
@@ -26,20 +26,6 @@
                     <option value="10">2021</option>
                     <option value="10">2020</option>
                     <option value="25">2019</option>
-                </select>
-                <select id="monthSelect" class="border border-gray-300 rounded-md p-1 w-40">
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
                 </select>
             </div>
         </div>
@@ -75,11 +61,11 @@
                     <th class="py-3 px-6 text-left border-r border-gray-300">Issued</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">Pending</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">Total</th>
-                    <th class="py-3 px-6 text-left border-r border-gray-300">AA</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">AAA</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">MP</th>
-                    <th class="py-3 px-6 text-left border-r border-gray-300">AR</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">AAR</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">CC</th>
-                    <th class="py-3 px-6 text-left border-r border-gray-300">CP</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">ACP</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">AVE. CS</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">AVE. SA</th>
                     <th class="py-3 px-6 text-left border-r border-gray-300">NR</th>
