@@ -130,4 +130,14 @@ class AdminController extends Controller
     {
         return view('admin.sub_unit_summaryYTD');
     }
+
+    public function index_UnitSummary()
+    {
+        return view('admin.unit_summary');
+    }
+
+    public function index_UnitSummaryYTD()
+    {
+        return view('admin.unit_summaryYTD');
+    }
 }

@@ -73,6 +73,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/agentYTD', [AdminController::class, 'index_AgentYTD']);
         Route::get('/admin/subUnitSummary', [AdminController::class, 'index_SubUnitSummary'])->name('admin.subUnitSummary');
         Route::get('/admin/subUnitSummaryYTD', [AdminController::class, 'index_SubUnitSummaryYTD'])->name('admin.subUnitSummaryYTD');
+        Route::get('/admin/unitSummary', [AdminController::class, 'index_UnitSummary'])->name('admin.unitSummary');
+        Route::get('/admin/unitSummaryYTD', [AdminController::class, 'index_UnitSummaryYTD'])->name('admin.unitSummaryYTD');
 
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);

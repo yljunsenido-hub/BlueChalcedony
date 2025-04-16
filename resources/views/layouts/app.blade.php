@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased overflow-x-hidden w-full h-screen relative">
-    
+
     <!-- Sidebar (fixed and floating) -->
     @include('components.sidebar')
 
@@ -26,11 +26,60 @@
         @include('layouts.navigation')
 
         <!-- Page Content -->
-        <main class="p-6 ml-64">
+        <main class="ml-64" id="mainContent"> <!-- Added pt-16 for top padding -->
             {{ $slot }}
         </main>
     </div>
 
-</body>
+    <!-- JavaScript for AJAX navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
+            // Function to load content dynamically via AJAX
+            function loadPage(url) {
+                // Perform AJAX request to fetch the content
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    },
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Extract only the content that should be replaced
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = data;
+
+                    // Find and replace the content inside <main> tag
+                    var newContent = tempDiv.querySelector('#mainContent').innerHTML;
+                    document.getElementById('mainContent').innerHTML = newContent;
+                })
+                .catch(error => {
+                    console.error('Error loading page:', error);
+                });
+            }
+
+            // Intercept all anchor clicks for AJAX loading
+            document.querySelectorAll('a').forEach(anchor => {
+                anchor.addEventListener('click', function (event) {
+                    const href = this.getAttribute('href');
+
+                    if (href && href !== '#') {
+                        event.preventDefault();
+                        window.history.pushState(null, '', href);
+                        loadPage(href);
+                    }
+                });
+            });
+
+            // Handle back and forward browser navigation
+            window.addEventListener('popstate', function () {
+                loadPage(window.location.href);
+            });
+
+        });
+    </script>
+
+</body>
 </html>
