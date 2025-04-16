@@ -59,7 +59,7 @@
 
         <div class="flex items-center">
             <label for="search" class="mr-2 text-sm text-gray-600">Search:</label>
-            <input type="text" id="search" class="px-2 py-1 border border-gray-300 rounded-md shadow-sm text-sm" placeholder="Search...">
+            <input type="text" id="search" class="px-2 py-1 border border-gray-300 rounded-md shadow-sm text-sm">
         </div>
     </div>
 
