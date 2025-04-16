@@ -19,17 +19,19 @@
     <!-- Sidebar (fixed and floating) -->
     @include('components.sidebar')
 
+    <!-- Navigation -->
+    @include('layouts.navigation')
+
     <!-- Main Content -->
     <div class="min-h-screen w-full transition-all duration-300 ease-in-out">
 
-        <!-- Navigation -->
-        @include('layouts.navigation')
-
         <!-- Page Content -->
-        <main class="ml-64" id="mainContent"> <!-- Added pt-16 for top padding -->
+        <main class="pl-72 pr-8 pt-8 pb-10" id="mainContent">
             {{ $slot }}
         </main>
+        
     </div>
+</body>
 
     <!-- JavaScript for AJAX navigation -->
     <script>

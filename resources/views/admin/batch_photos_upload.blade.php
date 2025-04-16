@@ -5,10 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="p-6">
-        <div class="max-w-4xl mx-auto lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-4">
-                <div class="p-10 text-gray-900 dark:text-gray-100 flex justify-center">
+    <div class="">
+        <div class="max-w-9xl mx-auto lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
+                <div class="p-1 text-gray-900 dark:text-gray-100 flex justify-center">
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md w-full sm:w-4/5"> <!-- Ensure full width responsiveness -->
                         <!-- Title -->
                         <h2 class="text-4xl font-bold mb-4 text-center text-gray-800">Branch Operations</h2>
@@ -18,19 +19,19 @@
                             <p class="text-md text-yellow-300 text-center">Upload Batch Photos</p>
                         </div> 
                             
-                           <!-- File Upload Section -->
+                        <!-- File Upload Section -->
                         <div class="space-y-6 mt-5">
                             <!-- File Input and Button Section (Centered) -->
-                            <div class="flex justify-center items-center space-x-4 w-full">
-                                <!-- File Input -->
+                            <div class="flex justify-between items-center w-full">
+                                <!-- File Input (Left Corner) -->
                                 <input 
                                     type="file" 
                                     id="file-upload" 
-                                    class="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-center" 
+                                    class="border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
                                     accept=".csv"
                                 >
 
-                                <!-- Upload Button -->
+                                <!-- Upload Button (Right Corner) -->
                                 <button 
                                     onclick="confirmUpload()" 
                                     class="w-40 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition duration-300 text-center"
@@ -41,9 +42,9 @@
                 
                             <!-- Image Section -->
                                 <div class="flex justify-center mt-4">
-                                    <img src="public\images\imageguide.png" alt="Image Guide" class="rounded-md shadow-md">
+                                    <img src="{{ asset('images/imageguide.png') }}" alt="Image Guide" class="rounded-md shadow-md">
                                 </div>
-                            </div>
+
 
                         <!-- Confirmation Modal -->
                         <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">

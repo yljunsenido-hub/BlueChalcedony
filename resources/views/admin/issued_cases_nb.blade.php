@@ -2,7 +2,7 @@
     <x-slot name="header">
         <!-- NAP Report Section -->
         <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-1">
-            <div class="bg-blue-900 text-white text-4xl font-bold rounded-lg p-3 mt-2 mb-2">
+            <div class="bg-blue-900 text-white text-3xl font-bold rounded-lg p-2 pl-3 mt-2 mb-3">
                 Team Issued Cases
             </div>
 

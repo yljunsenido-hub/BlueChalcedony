@@ -1,4 +1,4 @@
-<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto">
+<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto custom-scrollbar">
     <h2 class="text-lg font-semibold">Blue Chalcedony Quartz</h2>
     <nav class="mt-8 space-y-2">
         @php $user = auth()->user(); @endphp
@@ -373,7 +373,17 @@
     </nav>
 </aside>
 
+<style>
+    /* Hide scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 0px; /* Remove the scrollbar */
+    }
 
+    /* Firefox scrollbar styling */
+    .custom-scrollbar {
+        scrollbar-width: none; /* Firefox */
+    }
+</style>
 
 <script>
     document.querySelectorAll('.dropdown-toggle').forEach(button => {

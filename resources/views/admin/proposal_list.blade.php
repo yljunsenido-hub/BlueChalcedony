@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         
-        <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-1">
+        <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg pb-1">
             <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
                 Proposal List
             </div>
