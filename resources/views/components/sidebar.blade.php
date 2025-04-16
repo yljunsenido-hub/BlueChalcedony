@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto custom-scrollbar">
     <h2 class="text-lg font-semibold">Blue Chalcedony Quartz</h2>
     <nav class="mt-8 space-y-2">
+=======
+z<aside class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-t from-blue-600 to-blue-900 text-white p-4 overflow-y-auto">
+    <h2 class="text-lg font-semibold">Blue Chalcedony Quartz</h2>
+    <nav class="mt-5 space-y-2">
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
         @php $user = auth()->user(); @endphp
 
         @if($user->role == 'admin')
@@ -18,10 +24,17 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $leadscasesOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+<<<<<<< HEAD
                         <a href="{{ url('/admin/submitted_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submitted Cases</a>
                         <a href="{{ url('/admin/issued_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
                         <a href="{{ url('/admin/outreq_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Outreq Cases</a>
                         <a href="{{ url('/admin/declined_postponed_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Declined/Postponed Cases</a>
+=======
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submitted Cases</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Outreq Cases</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Declined/Postponed Cases</a>
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
                     </div>
                 </div>
             </div>
@@ -37,9 +50,15 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $newbusinessOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+<<<<<<< HEAD
                         <a href="{{ url('/admin/submission_approval') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submission Approval</a>
                         <a href="{{ url('/admin/new_business_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">New Business Maintenance</a>
                         <a href="{{ url('/admin/issued_cases_nb') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
+=======
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submission Approval</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">New Business Maintenance</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
                     </div>
                 </div>
             </div>
@@ -58,11 +77,18 @@
                         <a href="{{ url('/admin/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/dashboard') ? 'bg-blue-600' : '' }}">Issued Report</a>
                         <a href="{{ url('/admin/nap_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report') ? 'bg-blue-600' : '' }}">Nap Report</a>
                         <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report') ? 'bg-blue-600' : '' }}">Policy Premium Report</a>
+<<<<<<< HEAD
                         <a href="{{ url('/admin/agentMTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentMTD') ? 'bg-blue-600' : '' }}">Agent MTD</a>
                         <a href="{{ url('/admin/agentYTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentYTD') ? 'bg-blue-600' : '' }}">Agent YTD</a>
                         <a href="{{ url('/admin/subUnitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/subUnitSummary') ? 'bg-blue-600' : '' }}">Sub-Unit Summary</a>
                         <a href="{{ url('/admin/unitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitSummary') ? 'bg-blue-600' : '' }}">Unit Summary</a>
                     
+=======
+                        <a href="{{ url('/admin/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/issued_report_upload') ? 'bg-blue-600' : '' }}">Issued Report Upload</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report_upload') ? 'bg-blue-600' : '' }}">Nap Report Upload</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report_upload') ? 'bg-blue-600' : '' }}">Policy Premium Due List Report Upload</a>
+                        <a href="{{ url('/admin/register') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/register') ? 'bg-blue-600' : '' }}">Register</a>
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
                     </div>
                 </div>
             </div>
@@ -78,7 +104,11 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $marketingOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+<<<<<<< HEAD
                         <a href="{{ url('/admin/poster_template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Poster Templates</a>
+=======
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Marketing Poster</a>
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
                     </div>
                 </div>
             </div>
@@ -94,8 +124,13 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $proposalbankOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
+<<<<<<< HEAD
                         <a href="{{ url('/admin/proposal_search') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal Search</a>
                         <a href="{{ url('/admin/proposal_list') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal List</a>
+=======
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Recruit</a>
+                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Recruitment Process</a>
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
                     </div>
                 </div>
             </div>
@@ -142,7 +177,11 @@
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
                         <a href="{{ url('admin/bcms/poster-template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
                         <a href="{{ url('admin/bcms/poster') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
+<<<<<<< HEAD
                         <a href="{{ url('/admin/register') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
+=======
+                        <a href="{{ url('admin/bcms/agent') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
                         <a href="{{ url('admin/bcms/unit') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
                         <a href="{{ url('admin/bcms/submission') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/submission') ? 'bg-blue-600' : '' }}">Sub-Unit Submission/Policy Record</a>
                         <a href="{{ url('admin/bcms/digital-card') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/digital-card') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
@@ -411,12 +450,15 @@
                 dropdown.classList.add('max-h-[1000px]', 'opacity-100', 'scale-y-100');
                 icon.classList.add('rotate-180');
 
+<<<<<<< HEAD
                 // Apply background color based on role
                 if (role === 'admin') {
                     button.classList.add('bg-blue-200/30');
                 } else {
                     button.classList.add('bg-gray-700/60');
                 }
+=======
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
             }
         });
     });

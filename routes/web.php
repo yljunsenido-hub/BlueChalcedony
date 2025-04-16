@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
 
+<<<<<<< HEAD
         //new
             //BOU
         Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
@@ -76,6 +77,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/unitSummary', [AdminController::class, 'index_UnitSummary'])->name('admin.unitSummary');
         Route::get('/admin/unitSummaryYTD', [AdminController::class, 'index_UnitSummaryYTD'])->name('admin.unitSummaryYTD');
 
+=======
+        //new file added
+        Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
+        Route::get('/admin/update_submission_policy_record', [AdminController::class, 'index_UpdateSubmissionPolicyRecord']);
+        //end
+>>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
         Route::post('/admin/issued_report'  , [IssuedReportController::class, 'importExcelData']);
