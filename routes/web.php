@@ -58,6 +58,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/submission_approval', [AdminController::class, 'index_SubmissionApproval']);
         Route::get('/admin/new_business_maintenance', [AdminController::class, 'index_NewBusinessMaintenance']);
         Route::get('/admin/issued_cases_nb', [AdminController::class, 'index_IssuedCasesNb']);
+
+            //MarketingPosters
+        Route::get('/admin/poster_template', [AdminController::class, 'index_PosterTemplate']);
+
+            //ProposalBank
+        Route::get('/admin/proposal_search', [AdminController::class, 'index_ProposalSearch']);
+        Route::get('/admin/proposal_list', [AdminController::class, 'index_ProposalList']);
+
         //end
 
         // Reports

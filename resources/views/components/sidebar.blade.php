@@ -76,7 +76,7 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $marketingOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Marketing Poster</a>
+                        <a href="{{ url('/admin/poster_template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Poster Templates</a>
                     </div>
                 </div>
             </div>
@@ -92,8 +92,8 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $proposalbankOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal Search</a>
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal List</a>
+                        <a href="{{ url('/admin/proposal_search') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal Search</a>
+                        <a href="{{ url('/admin/proposal_list') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal List</a>
                     </div>
                 </div>
             </div>

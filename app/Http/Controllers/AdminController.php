@@ -92,7 +92,25 @@ class AdminController extends Controller
         return view('admin.issued_cases_nb');
     }
 
+    //MarketingPoster
+    public function index_PosterTemplate()
+    {
+        return view('admin.poster_template');
+    }
+
+    //ProposalBank
+    public function index_ProposalSearch()
+    {
+        return view('admin.proposal_search');
+    }
+
+    public function index_ProposalList()
+    {
+        return view('admin.proposal_list');
+    }
+
     //end
+
     public function index_AgentMTD()
     {
         return view('admin.agentMTD');
