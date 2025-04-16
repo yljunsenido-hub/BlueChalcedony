@@ -45,7 +45,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
 
-<<<<<<< HEAD
         //new
             //BOU
         Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
