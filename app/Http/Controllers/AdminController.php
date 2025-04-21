@@ -43,12 +43,8 @@ class AdminController extends Controller
     }
 
 
-<<<<<<< HEAD
     //new
     //BOU
-=======
-    //new added
->>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
     public function index_BatchPhotosUpload()
     {
         return view('admin.batch_photos_upload');
@@ -58,7 +54,6 @@ class AdminController extends Controller
     {
         return view('admin.update_submission_policy_record');
     }
-<<<<<<< HEAD
 
     //Lead&Cases
     public function index_SubmittedCases()

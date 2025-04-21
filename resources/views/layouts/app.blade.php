@@ -14,7 +14,6 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<<<<<<< HEAD
 <body class="font-sans antialiased overflow-x-hidden w-full h-screen relative">
 
     <!-- Sidebar (fixed and floating) -->
@@ -28,27 +27,11 @@
 
         <!-- Page Content -->
         <main class="pl-72 pr-8 pt-8 pb-10" id="mainContent">
-=======
-<body class="font-sans antialiased overflow-x-hidden w-full h-screen">
-    <div class="flex">
-        <!-- Include the sidebar -->
-        @include('components.sidebar')  
-
-        <!-- Main Content -->
-    <div class="flex-1 pl-64 min-h-screen w-full">
-        <!-- Navigation -->
-        @include('layouts.navigation')
-
-
-        <!-- Page Content -->
-        <main class="p-6">
->>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142
             {{ $slot }}
         </main>
         
     </div>
 </body>
-<<<<<<< HEAD
 
     <!-- JavaScript for AJAX navigation -->
     <script>
@@ -102,6 +85,3 @@
 
 </body>
 </html>
-=======
-</html>
->>>>>>> 2ca38232a5fbfc913727fbd0e6f62ad8c94a3142

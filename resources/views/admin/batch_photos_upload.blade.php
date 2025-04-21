@@ -5,10 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="p-6">
-        <div class="max-w-4xl mx-auto lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-4">
-                <div class="p-10 text-gray-900 dark:text-gray-100 flex justify-center">
+    <div class="">
+        <div class="max-w-9xl mx-auto lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
+                <div class="p-1 text-gray-900 dark:text-gray-100 flex justify-center">
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md w-full sm:w-4/5"> <!-- Ensure full width responsiveness -->
                         <!-- Title -->
                         <h2 class="text-4xl font-bold mb-4 text-center text-gray-800">Branch Operations</h2>
@@ -38,21 +39,11 @@
                                     UPLOAD CSV
                                 </button>
                             </div>
-                <!-- Date Range Text Section -->
-                <div class="flex flex-col items-center mt-4">
-                                <p class="text-gray-700 text-sm text-center">
-                                    Please upload data from 
-                                    <span class="font-semibold text-blue-600" id="start-date"></span> 
-                                    to 
-                                    <span class="font-semibold text-blue-600" id="end-date"></span>
-                                </p>
-                            </div>
-
-                            <!-- Success Message -->
-                            <div id="upload-success" class="hidden text-green-600 text-center mt-4">
-                                <p>File uploaded successfully!</p>
-                            </div>
-                        </div>
+                
+                            <!-- Image Section -->
+                                <div class="flex justify-center mt-4">
+                                    <img src="{{ asset('images/imageguide.png') }}" alt="Image Guide" class="rounded-md shadow-md">
+                                </div>
 
 
                         <!-- Confirmation Modal -->
