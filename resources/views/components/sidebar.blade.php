@@ -63,7 +63,15 @@
                         <a href="{{ url('/admin/subUnitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/subUnitSummary') ? 'bg-blue-600' : '' }}">Sub-Unit Summary</a>
                         <a href="{{ url('/admin/unitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitSummary') ? 'bg-blue-600' : '' }}">Unit Summary</a>
                         <a href="{{ url('/admin/branchSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchSummary') ? 'bg-blue-600' : '' }}">Branch Summary</a>
+                        <a href="{{ url('/admin/branchHonorRolls') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchHonorRolls') ? 'bg-blue-600' : '' }}">Branch Honor Rolls</a>
+                        <a href="{{ url('/admin/unitHonorRolls') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitHonorRolls') ? 'bg-blue-600' : '' }}">Unit Honor Rolls</a>
+                        <a href="{{ url('/admin/customGroup') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/customGroup') ? 'bg-blue-600' : '' }}">Custom Group</a>
+                        <a href="{{ url('/admin/personalToGO') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/personalToGO') ? 'bg-blue-600' : '' }}">Personal To Go's (BETA)</a>
+                        <a href="{{ url('/admin/qualifiers') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/qualifiers') ? 'bg-blue-600' : '' }}">Qualifiers</a>
+                        <a href="{{ url('/admin/MDRTTracker') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/MDRTTracker') ? 'bg-blue-600' : '' }}">MDRT Tracker</a>
+                        <a href="{{ url('/admin/easyReports') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/easyReports') ? 'bg-blue-600' : '' }}">Easy Reports</a>
                     
+
                     </div>
                 </div>
             </div>

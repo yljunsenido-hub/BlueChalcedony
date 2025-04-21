@@ -75,6 +75,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/subUnitSummaryYTD', [AdminController::class, 'index_SubUnitSummaryYTD'])->name('admin.subUnitSummaryYTD');
         Route::get('/admin/unitSummary', [AdminController::class, 'index_UnitSummary'])->name('admin.unitSummary');
         Route::get('/admin/unitSummaryYTD', [AdminController::class, 'index_UnitSummaryYTD'])->name('admin.unitSummaryYTD');
+        Route::get('/admin/branchSummary', [AdminController::class, 'index_BranchSummary']);
+        Route::get('/admin/branchHonorRolls', [AdminController::class, 'index_BranchHonorRolls'])->name('admin.branchHonorRolls');
+        Route::get('/admin/branchHonorRollsYTD', [AdminController::class, 'index_BranchHonorRollsYTD'])->name('admin.branchHonorRollsYTD');
+        Route::get('/admin/unitHonorRolls', [AdminController::class, 'index_UnitHonorRolls'])->name('admin.unitHonorRolls');
+        Route::get('/admin/unitHonorRollsYTD', [AdminController::class, 'index_UnitHonorRollsYTD'])->name('admin.unitHonorRollsYTD');
+        Route::get('/admin/customGroup', [AdminController::class, 'index_CustomGroup']);
+        Route::get('/admin/personalToGO', [AdminController::class, 'index_PersonalToGO']);
+        Route::get('/admin/qualifiers', [AdminController::class, 'index_Qualifiers']);
+        Route::get('/admin/MDRTTracker', [AdminController::class, 'index_MDRTTracker'])->name('admin.MDRTTracker');
+        Route::get('/admin/MDRTTrackerPersonal', [AdminController::class, 'index_MDRTTrackerPersonal'])->name('admin.MDRTTrackerPersonal');
+        Route::get('/admin/easyReports', [AdminController::class, 'index_EasyReports']);
 
 
         Route::get('/admin/issued_report'  , [IssuedReportController::class, 'index_IssuedReport']);
