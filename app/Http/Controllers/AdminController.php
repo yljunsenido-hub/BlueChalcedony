@@ -143,4 +143,59 @@ class AdminController extends Controller
     {
         return view('admin.unit_summaryYTD');
     }
+
+    public function index_BranchSummary()
+    {
+        return view('admin.branch_summary');
+    }
+
+    public function index_BranchHonorRolls()
+    {
+        return view('admin.branch_honor_rolls');
+    }
+
+    public function index_BranchHonorRollsYTD()
+    {
+        return view('admin.branch_honor_rollsYTD');
+    }
+
+    public function index_UnitHonorRolls()
+    {
+        return view('admin.unit_honor_rolls');
+    }
+
+    public function index_UnitHonorRollsYTD()
+    {
+        return view('admin.unit_honor_rollsYTD');
+    }
+
+    public function index_CustomGroup()
+    {
+        return view('admin.custom_group');
+    }
+
+    public function index_PersonalToGO()
+    {
+        return view('admin.personal_to_go');
+    }
+
+    public function index_Qualifiers()
+    {
+        return view('admin.qualifiers');
+    }
+
+    public function index_MDRTTracker()
+    {
+        return view('admin.MDRT_tracker');
+    }
+
+    public function index_MDRTTrackerPersonal()
+    {
+        return view('admin.MDRT_trackerPersonal');
+    }
+
+    public function index_EasyReports()
+    {
+        return view('admin.easy_reports');
+    }
 }
