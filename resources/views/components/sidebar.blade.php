@@ -70,8 +70,6 @@
                         <a href="{{ url('/admin/qualifiers') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/qualifiers') ? 'bg-blue-600' : '' }}">Qualifiers</a>
                         <a href="{{ url('/admin/MDRTTracker') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/MDRTTracker') ? 'bg-blue-600' : '' }}">MDRT Tracker</a>
                         <a href="{{ url('/admin/easyReports') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/easyReports') ? 'bg-blue-600' : '' }}">Easy Reports</a>
-                    
-
                     </div>
                 </div>
             </div>
