@@ -1,12 +1,18 @@
-<x-app-layout>
+    <x-app-layout>
     <x-slot name="header">
-        <!-- NAP Report Section -->
-        <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-1">
-            <div class="text-blue-900 text-4xl font-bold rounded-lg p-2 pl-1">
-                Team Issued Cases
-            </div>
 
-            <div class="bg-gray-400 text-white shadow-lg rounded-sm p-1 mb-3"></div>
+        <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3">
+            <div class="text-blue-900 text-4xl font-bold rounded-lg p-2 pl-1">
+                Recruit
+            </div>
+            
+            <div class="flex justify-between items-center bg-blue-900 text-white shadow-lg rounded-lg p-2 mb-3">
+                <div class="flex-1 text-left">
+                    <a href="/admin/recruit_create" class="text-white hover:text-yellow-300">
+                        Create New Recruit
+                    </a>
+                </div>
+            </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse border border-gray-300">

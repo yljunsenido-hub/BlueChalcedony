@@ -109,6 +109,64 @@ class AdminController extends Controller
         return view('admin.proposal_list');
     }
 
+    //Recruit
+    public function index_Recruit()
+    {
+        return view('admin.recruit');
+    }
+
+    public function index_RecruitmentProcess()
+    {
+        return view('admin.recruitment_process');
+    }
+    public function index_RecruitCreate()
+    {
+        return view('admin.recruit_create');
+    }
+
+    //Appointment
+    public function index_Appointment()
+    {
+        return view('admin.appointment');
+    }
+
+    //BCSM
+    public function index_PosterTemplateMaintenance()
+    {
+        return view('admin.poster_template_maintenance');
+    }
+    
+    public function index_PosterMaintenance()
+    {
+        return view('admin.poster_maintenance');
+    }
+
+    public function index_AgentMaintenance()
+    {
+        return view('admin.agent_maintenance');
+    }
+
+    public function index_UnitMaintenance()
+    {
+        return view('admin.unit_maintenance');
+    }
+
+    public function index_SubUnitMaintenance()
+    {
+        return view('admin.sub_unit_maintenance');
+    }
+
+    public function index_DigitalCardMaintenance()
+    {
+        return view('admin.digital_card_maintenance');
+    }
+
+    public function index_ScheduledTask()
+    {
+        return view('admin.scheduled_task');
+    }
+
+
     //end
 
 

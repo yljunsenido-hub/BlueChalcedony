@@ -66,6 +66,23 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/proposal_search', [AdminController::class, 'index_ProposalSearch']);
         Route::get('/admin/proposal_list', [AdminController::class, 'index_ProposalList']);
 
+            //Recruitment
+        Route::get('/admin/recruit', [AdminController::class, 'index_Recruit']);
+        Route::get('/admin/recruitment_process', [AdminController::class, 'index_RecruitmentProcess']);
+        Route::get('/admin/recruit_create', [AdminController::class, 'index_RecruitCreate']);
+
+            //Appointment
+        Route::get('/admin/appointment', [AdminController::class, 'index_Appointment']);
+
+            //BOU
+        Route::get('/admin/poster_template_maintenance', [AdminController::class, 'index_PosterTemplateMaintenance']);        
+        Route::get('/admin/poster_maintenance', [AdminController::class, 'index_PosterMaintenance']);        
+        Route::get('/admin/agent_maintenance', [AdminController::class, 'index_AgentMaintenance']);        
+        Route::get('/admin/unit_maintenance', [AdminController::class, 'index_UnitMaintenance']);        
+        Route::get('/admin/sub_unit_maintenance', [AdminController::class, 'index_SubUnitMaintenance']);
+        Route::get('/admin/digital_card_maintenance', [AdminController::class, 'index_DigitalCardMaintenance']);
+        Route::get('/admin/scheduled_task', [AdminController::class, 'index_ScheduledTask']);
+
         //end
 
         // Reports

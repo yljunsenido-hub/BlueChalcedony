@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
-        <!-- NAP Report Section -->
+
         <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-1">
             <div class="text-blue-900 text-4xl font-bold rounded-lg p-2 pl-1">
-                Team Issued Cases
+                Recruit Process
             </div>
 
             <div class="bg-gray-400 text-white shadow-lg rounded-sm p-1 mb-3"></div>
@@ -13,22 +13,16 @@
                     <thead>
                         <tr class="bg-gray-200">
                             <th class="border border-gray-300 px-4 py-2">ID</th>
-                            <th class="border border-gray-300 px-4 py-2">Agent</th>
-                            <th class="border border-gray-300 px-4 py-2">Unit</th>
-                            <th class="border border-gray-300 px-4 py-2">Sub-Unit</th>
-                            <th class="border border-gray-300 px-4 py-2">Client Name</th>
-                            <th class="border border-gray-300 px-4 py-2">Policy No.</th>
-                            <th class="border border-gray-300 px-4 py-2">APE</th>
-                            <th class="border border-gray-300 px-4 py-2">Issued Date</th>
+                            <th class="border border-gray-300 px-4 py-2">Process Description</th>
+                            <th class="border border-gray-300 px-4 py-2">No. of Recruits</th>
+                            <th class="border border-gray-300 px-4 py-2">Completion Rate (%)</th>
+                            <th class="border border-gray-300 px-4 py-2">Status</th>
                             <th class="border border-gray-300 px-4 py-2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         
                             <tr>
-                                <th class="border border-gray-300 px-4 py-2"></th>
-                                <th class="border border-gray-300 px-4 py-2"></th>
-                                <th class="border border-gray-300 px-4 py-2"></th>
                                 <th class="border border-gray-300 px-4 py-2"></th>
                                 <th class="border border-gray-300 px-4 py-2"></th>
                                 <th class="border border-gray-300 px-4 py-2"></th>

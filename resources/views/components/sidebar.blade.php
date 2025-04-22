@@ -120,8 +120,8 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $recruitmentOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-issued') ? 'bg-blue-600' : '' }}">Recruit</a>
-                        <a href="{{ url('#') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-nap') ? 'bg-blue-600' : '' }}">Recruitment Process</a>
+                        <a href="{{ url('/admin/recruit') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-issued') ? 'bg-blue-600' : '' }}">Recruit</a>
+                        <a href="{{ url('/admin/recruitment_process') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-nap') ? 'bg-blue-600' : '' }}">Recruitment Process</a>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
             <!-- Appointments Section -->
             @php $appointmentsOpen = request()->is('admin/appointments/*'); @endphp
             <div class="relative group">
-                <a href="{{ url('/admin/appointments') }}" data-role="admin"
+                <a href="{{ url('/admin/appointment') }}" data-role="admin"
                    class="w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $appointmentsOpen ? 'bg-blue-200/30' : '' }}">
                     <span>Appointments</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -149,13 +149,13 @@
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $bcmsOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
                     <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('admin/bcms/poster-template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
-                        <a href="{{ url('admin/bcms/poster') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
-                        <a href="{{ url('/admin/register') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
-                        <a href="{{ url('admin/bcms/unit') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
-                        <a href="{{ url('admin/bcms/submission') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/submission') ? 'bg-blue-600' : '' }}">Sub-Unit Submission/Policy Record</a>
-                        <a href="{{ url('admin/bcms/digital-card') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/digital-card') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
-                        <a href="{{ url('admin/bcms/scheduled-tasks') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/scheduled-tasks') ? 'bg-blue-600' : '' }}">Scheduled Tasks</a>
+                        <a href="{{ url('/admin/poster_template_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
+                        <a href="{{ url('/admin/poster_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
+                        <a href="{{ url('/admin/agent_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
+                        <a href="{{ url('/admin/unit_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
+                        <a href="{{ url('/admin/sub_unit_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Sub-Unit Maintenance</a>
+                        <a href="{{ url('/admin/digital_card_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
+                        <a href="{{ url('/admin/scheduled_task') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Scheduled Tasks</a>
                     </div>
                 </div>
             </div>
