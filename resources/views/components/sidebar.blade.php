@@ -8,103 +8,103 @@
         <h2 class="text-s font-semibold">Operations</h2>
 
             <!-- Leads & Cases -->
-            @php $leadscasesOpen = request()->is('admin/recruitment/*'); @endphp
-            <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $leadscasesOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Leads & Cases</span>
-                    <svg class="w-4 h-4 transition-transform duration-300 {{ $leadscasesOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
-                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $leadscasesOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/submitted_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submitted Cases</a>
-                        <a href="{{ url('/admin/issued_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
-                        <a href="{{ url('/admin/outreq_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Outreq Cases</a>
-                        <a href="{{ url('/admin/declined_postponed_cases') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Declined/Postponed Cases</a>
-                    </div>
+        @php $leadscasesOpen = request()->is('admin/recruitment/*'); @endphp
+        <div class="relative group">
+            <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 {{ $leadscasesOpen ? : '' }}">
+                <span class="group-hover:text-yellow-400 md:font-bold">Leads & Cases</span>
+                <svg class="w-4 h-4 transition-transform duration-300 ml-2 {{ $leadscasesOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $leadscasesOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                <div class="mt-2 space-y-2 p-2">
+                    <a href="{{ url('/admin/submitted_cases') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/submitted_cases') ? : '' }}">Submitted Cases</a>
+                    <a href="{{ url('/admin/issued_cases') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/issued_cases') ? : '' }}">Issued Cases</a>
+                    <a href="{{ url('/admin/outreq_cases') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/outreq_cases') ? : '' }}">Outreq Cases</a>
+                    <a href="{{ url('/admin/declined_postponed_cases') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/declined_postponed_cases') ? : '' }}">Declined/Postponed Cases</a>
                 </div>
             </div>
+        </div>
 
-            <!-- New Business -->
+                <!-- New Business -->
             @php $newbusinessOpen = request()->is('admin/recruitment/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $newbusinessOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>New Business</span>
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 {{ $newbusinessOpen ? : '' }}">
+                    <span class="group-hover:text-yellow-400 md:font-bold">New Business</span>
                     <svg class="w-4 h-4 transition-transform duration-300 {{ $newbusinessOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $newbusinessOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/submission_approval') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Submission Approval</a>
-                        <a href="{{ url('/admin/new_business_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">New Business Maintenance</a>
-                        <a href="{{ url('/admin/issued_cases_nb') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Issued Cases</a>
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/submission_approval') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/submission_approval') ? : '' }}">Submission Approval</a>
+                        <a href="{{ url('/admin/new_business_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/new_business_maintenance') ? : '' }}">New Business Maintenance</a>
+                        <a href="{{ url('/admin/issued_cases_nb') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/issued_cases_nb') ? : '' }}">Issued Cases</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Reports -->
-            @php $adminOpen = request()->is('admin/*'); @endphp
+
+                <!-- Reports -->
+            @php $reportsOpen = request()->is('admin/recruitment/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $adminOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Reports</span>
-                    <svg class="w-4 h-4 transition-transform duration-300 {{ $adminOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 {{ $reportsOpen ? '' : '' }}">
+                    <span class="group-hover:text-yellow-400 md:font-bold">Reports</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $reportsOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
-                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $adminOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/dashboard') ? 'bg-blue-600' : '' }}">Issued Report</a>
-                        <a href="{{ url('/admin/nap_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report') ? 'bg-blue-600' : '' }}">Nap Report</a>
-                        <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report') ? 'bg-blue-600' : '' }}">Policy Premium Report</a>
-                        <a href="{{ url('/admin/agentMTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentMTD') ? 'bg-blue-600' : '' }}">Agent MTD</a>
-                        <a href="{{ url('/admin/agentYTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentYTD') ? 'bg-blue-600' : '' }}">Agent YTD</a>
-                        <a href="{{ url('/admin/subUnitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/subUnitSummary') ? 'bg-blue-600' : '' }}">Sub-Unit Summary</a>
-                        <a href="{{ url('/admin/unitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitSummary') ? 'bg-blue-600' : '' }}">Unit Summary</a>
-                        <a href="{{ url('/admin/branchSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchSummary') ? 'bg-blue-600' : '' }}">Branch Summary</a>
-                        <a href="{{ url('/admin/branchHonorRolls') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchHonorRolls') ? 'bg-blue-600' : '' }}">Branch Honor Rolls</a>
-                        <a href="{{ url('/admin/unitHonorRolls') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitHonorRolls') ? 'bg-blue-600' : '' }}">Unit Honor Rolls</a>
-                        <a href="{{ url('/admin/customGroup') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/customGroup') ? 'bg-blue-600' : '' }}">Custom Group</a>
-                        <a href="{{ url('/admin/personalToGO') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/personalToGO') ? 'bg-blue-600' : '' }}">Personal To Go's (BETA)</a>
-                        <a href="{{ url('/admin/qualifiers') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/qualifiers') ? 'bg-blue-600' : '' }}">Qualifiers</a>
-                        <a href="{{ url('/admin/MDRTTracker') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/MDRTTracker') ? 'bg-blue-600' : '' }}">MDRT Tracker</a>
-                        <a href="{{ url('/admin/easyReports') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/easyReports') ? 'bg-blue-600' : '' }}">Easy Reports</a>
-                    
-
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $reportsOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/dashboard') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/dashboard') ? '' : '' }}">Issued Report</a>
+                        <a href="{{ url('/admin/nap_report') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/nap_report') ? '' : '' }}">Nap Report</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/policy_premium_due_list_report') ? '' : '' }}">Policy Premium Report</a>
+                        <a href="{{ url('/admin/agentMTD') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/agentMTD') ? '' : '' }}">Agent MTD</a>
+                        <a href="{{ url('/admin/agentYTD') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/agentYTD') ? '' : '' }}">Agent YTD</a>
+                        <a href="{{ url('/admin/subUnitSummary') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/subUnitSummary') ? '' : '' }}">Sub-Unit Summary</a>
+                        <a href="{{ url('/admin/unitSummary') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/unitSummary') ? '' : '' }}">Unit Summary</a>
+                        <a href="{{ url('/admin/branchSummary') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/branchSummary') ? '' : '' }}">Branch Summary</a>
+                        <a href="{{ url('/admin/branchHonorRolls') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/branchHonorRolls') ? '' : '' }}">Branch Honor Rolls</a>
+                        <a href="{{ url('/admin/unitHonorRolls') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/unitHonorRolls') ? '' : '' }}">Unit Honor Rolls</a>
+                        <a href="{{ url('/admin/customGroup') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/customGroup') ? '' : '' }}">Custom Group</a>
+                        <a href="{{ url('/admin/personalToGO') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/personalToGO') ? '' : '' }}">Personal To Go's (BETA)</a>
+                        <a href="{{ url('/admin/qualifiers') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/qualifiers') ? '' : '' }}">Qualifiers</a>
+                        <a href="{{ url('/admin/MDRTTracker') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/MDRTTracker') ? '' : '' }}">MDRT Tracker</a>
+                        <a href="{{ url('/admin/easyReports') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/easyReports') ? '' : '' }}">Easy Reports</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Marketing -->
+                    <!-- Marketing -->
             @php $marketingOpen = request()->is('admin/recruitment/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $marketingOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Marketing</span>
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200">
+                    <span class="group-hover:text-yellow-400 md:font-bold">Marketing</span>
                     <svg class="w-4 h-4 transition-transform duration-300 {{ $marketingOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $marketingOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/poster_template') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Poster Templates</a>
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/poster_template') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/poster_template') ? 'text-yellow-400' : '' }}">Poster Templates</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Proposal Bank -->
+
+                <!-- Proposal Bank -->
             @php $proposalbankOpen = request()->is('admin/recruitment/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $proposalbankOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Proposal Bank</span>
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200">
+                    <span class="group-hover:text-yellow-400 md:font-bold">Proposal Bank</span>
                     <svg class="w-4 h-4 transition-transform duration-300 {{ $proposalbankOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $proposalbankOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/proposal_search') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal Search</a>
-                        <a href="{{ url('/admin/proposal_list') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Proposal List</a>
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/proposal_search') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/proposal_search') ? '' : '' }}">Proposal Search</a>
+                        <a href="{{ url('/admin/proposal_list') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/proposal_list') ? '' : '' }}">Proposal List</a>
                     </div>
                 </div>
             </div>
@@ -112,50 +112,55 @@
             <!-- Recruitment -->
             @php $recruitmentOpen = request()->is('admin/recruitment/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $recruitmentOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Recruitment</span>
+                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200{{ $recruitmentOpen ? '' : '' }}">
+                    <span class="group-hover:text-yellow-400 md:font-bold">Recruitment</span>
                     <svg class="w-4 h-4 transition-transform duration-300 {{ $recruitmentOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $recruitmentOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/recruit') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-issued') ? 'bg-blue-600' : '' }}">Recruit</a>
-                        <a href="{{ url('/admin/recruitment_process') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchoperation/upload-nap') ? 'bg-blue-600' : '' }}">Recruitment Process</a>
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/recruit') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/branchoperation/upload-issued') ? '' : '' }}">Recruit</a>
+                        <a href="{{ url('/admin/recruitment_process') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400  {{ request()->is('admin/branchoperation/upload-nap') ? '' : '' }}">Recruitment Process</a>
                     </div>
                 </div>
             </div>
-                
-            <!-- Appointments Section -->
-            @php $appointmentsOpen = request()->is('admin/appointments/*'); @endphp
-            <div class="relative group">
-                <a href="{{ url('/admin/appointment') }}" data-role="admin"
-                   class="w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $appointmentsOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Appointments</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19l7-7-7-7"/>
-                    </svg>      
-                </a>
-            </div>
+        
 
+            <!-- Appointments Section -->
+             @php $appointmentsOpen = request()->is('admin/recruitment/*'); @endphp
+            <div class="relative group">
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200{{ $appointmentsOpen ? '' : '' }}">
+                    <span class="group-hover:text-yellow-400 md:font-bold">Appointments</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 {{ $appointmentsOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $appointmentsOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/appointment') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/branchoperation/upload-issued') ? '' : '' }}">Appointments Schedule</a>
+                    </div>
+                </div>
+            </div>
+      
             <!-- BCMS Maintenance Section -->
             @php $bcmsOpen = request()->is('admin/bcms/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $bcmsOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>BCMS Maintenance</span>
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 {{ $bcmsOpen ? '' : '' }}">
+                    <span class="group-hover:text-yellow-400 md:font-bold">BCMS Maintenance</span>
                     <svg class="w-4 h-4 transition-transform duration-300 {{ $bcmsOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $bcmsOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/poster_template_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
-                        <a href="{{ url('/admin/poster_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
-                        <a href="{{ url('/admin/agent_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
-                        <a href="{{ url('/admin/unit_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
-                        <a href="{{ url('/admin/sub_unit_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Sub-Unit Maintenance</a>
-                        <a href="{{ url('/admin/digital_card_maintenance') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
-                        <a href="{{ url('/admin/scheduled_task') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Scheduled Tasks</a>
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/poster_template_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/poster-template') ? 'bg-blue-600' : '' }}">Poster Template Maintenance</a>
+                        <a href="{{ url('/admin/poster_maintenance') }}" class="block py-1 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/poster') ? 'bg-blue-600' : '' }}">Poster Maintenance</a>
+                        <a href="{{ url('/admin/agent_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/agent') ? 'bg-blue-600' : '' }}">Agent Maintenance</a>
+                        <a href="{{ url('/admin/unit_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Unit Maintenance</a>
+                        <a href="{{ url('/admin/sub_unit_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Sub-Unit Maintenance</a>
+                        <a href="{{ url('/admin/digital_card_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Digital Card Maintenance</a>
+                        <a href="{{ url('/admin/scheduled_task') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/bcms/unit') ? 'bg-blue-600' : '' }}">Scheduled Tasks</a>
                     </div>
                 </div>
             </div>
@@ -163,19 +168,19 @@
             <!-- Branch Operations Utility Section -->
             @php $branchoperationOpen = request()->is('admin/branchoperation/*'); @endphp
             <div class="relative group">
-                <button data-role="admin" class="dropdown-toggle w-full py-2.5 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 hover:bg-blue-200/20 {{ $branchoperationOpen ? 'bg-blue-200/30' : '' }}">
-                    <span>Branch Operations Utility</span>
+                <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 {{ $branchoperationOpen ? '' : '' }}">
+                    <span class="group-hover:text-yellow-400 md:font-bold">Branch Operations Utility</span>
                     <svg class="w-4 h-4 transition-transform duration-300 {{ $branchoperationOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
                 <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $branchoperationOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/issued_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Issued</a>
-                        <a href="{{ url('/admin/nap_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload NAP</a>
-                        <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Due List</a>
-                        <a href="{{ url('/admin/batch_photos_upload') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Upload Batch Photos</a>
-                        <a href="{{ url('/admin/update_submission_policy_record') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('#') ? 'bg-blue-600' : '' }}">Update Submission/Policy Record</a>
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/issued_report_upload') }}"  class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('#') ? '' : '' }}">Upload Issued</a>
+                        <a href="{{ url('/admin/nap_report_upload') }}"  class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('#') ? '' : '' }}">Upload NAP</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report_upload') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('#') ? '' : '' }}">Upload Due List</a>
+                        <a href="{{ url('/admin/batch_photos_upload') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('#') ? '' : '' }}">Upload Batch Photos</a>
+                        <a href="{{ url('/admin/update_submission_policy_record') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('#') ? '' : '' }}">Update Submission/Policy Record</a>
                     </div>
                 </div>
             </div>
@@ -396,37 +401,34 @@
 
 <script>
     document.querySelectorAll('.dropdown-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const dropdown = button.nextElementSibling;
-            const icon = button.querySelector('svg');
-            const isOpen = dropdown.classList.contains('max-h-[1000px]');
-            const role = button.dataset.role;
-            //a
-            // Close all dropdowns
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.classList.remove('max-h-[1000px]', 'opacity-100', 'scale-y-100');
-                menu.classList.add('max-h-0', 'opacity-0', 'scale-y-95');
-            });
+    button.addEventListener('click', () => {
+        const dropdown = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        const span = button.querySelector('span');
+        const isOpen = dropdown.classList.contains('max-h-[1000px]');
 
-            // Reset all dropdown buttons
-            document.querySelectorAll('.dropdown-toggle').forEach(btn => {
-                btn.classList.remove('bg-blue-200/30', 'bg-gray-700/60');
-                btn.querySelector('svg').classList.remove('rotate-180');
-            });
-
-            // Open the clicked dropdown if not already open
-            if (!isOpen) {
-                dropdown.classList.remove('max-h-0', 'opacity-0', 'scale-y-95');
-                dropdown.classList.add('max-h-[1000px]', 'opacity-100', 'scale-y-100');
-                icon.classList.add('rotate-180');
-
-                // Apply background color based on role
-                if (role === 'admin') {
-                    button.classList.add('bg-blue-200/30');
-                } else {
-                    button.classList.add('bg-gray-700/60');
-                }
-            }
+        // Close all dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('max-h-[1000px]', 'opacity-100', 'scale-y-100');
+            menu.classList.add('max-h-0', 'opacity-0', 'scale-y-95');
         });
+
+        // Reset all dropdown buttons
+        document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+            btn.classList.remove('bg-blue-200/30', 'bg-gray-700/60');
+            const icon = btn.querySelector('svg');
+            const span = btn.querySelector('span');
+            icon.classList.remove('rotate-180', 'text-yellow-400');
+            span.classList.remove('text-yellow-400');
+        });
+
+        // Open the clicked dropdown if not already open
+        if (!isOpen) {
+            dropdown.classList.remove('max-h-0', 'opacity-0', 'scale-y-95');
+            dropdown.classList.add('max-h-[1000px]', 'opacity-100', 'scale-y-100');
+            icon.classList.add('rotate-180', 'text-yellow-400');
+            span.classList.add('text-yellow-400'); // 👈 This line adds yellow to text
+        }
     });
+});
 </script>
