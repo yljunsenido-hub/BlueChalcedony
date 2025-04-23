@@ -54,25 +54,23 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
-                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $adminOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
-                    <div class="mt-2 space-y-2 bg-blue-200/30 rounded-lg p-2">
-                        <a href="{{ url('/admin/dashboard') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/dashboard') ? 'bg-blue-600' : '' }}">Issued Report</a>
-                        <a href="{{ url('/admin/nap_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/nap_report') ? 'bg-blue-600' : '' }}">Nap Report</a>
-                        <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/policy_premium_due_list_report') ? 'bg-blue-600' : '' }}">Policy Premium Report</a>
-                        <a href="{{ url('/admin/agentMTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentMTD') ? 'bg-blue-600' : '' }}">Agent MTD</a>
-                        <a href="{{ url('/admin/agentYTD') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/agentYTD') ? 'bg-blue-600' : '' }}">Agent YTD</a>
-                        <a href="{{ url('/admin/subUnitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/subUnitSummary') ? 'bg-blue-600' : '' }}">Sub-Unit Summary</a>
-                        <a href="{{ url('/admin/unitSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitSummary') ? 'bg-blue-600' : '' }}">Unit Summary</a>
-                        <a href="{{ url('/admin/branchSummary') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchSummary') ? 'bg-blue-600' : '' }}">Branch Summary</a>
-                        <a href="{{ url('/admin/branchHonorRolls') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/branchHonorRolls') ? 'bg-blue-600' : '' }}">Branch Honor Rolls</a>
-                        <a href="{{ url('/admin/unitHonorRolls') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/unitHonorRolls') ? 'bg-blue-600' : '' }}">Unit Honor Rolls</a>
-                        <a href="{{ url('/admin/customGroup') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/customGroup') ? 'bg-blue-600' : '' }}">Custom Group</a>
-                        <a href="{{ url('/admin/personalToGO') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/personalToGO') ? 'bg-blue-600' : '' }}">Personal To Go's (BETA)</a>
-                        <a href="{{ url('/admin/qualifiers') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/qualifiers') ? 'bg-blue-600' : '' }}">Qualifiers</a>
-                        <a href="{{ url('/admin/MDRTTracker') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/MDRTTracker') ? 'bg-blue-600' : '' }}">MDRT Tracker</a>
-                        <a href="{{ url('/admin/easyReports') }}" class="block py-2.5 px-4 rounded hover:bg-blue-600 {{ request()->is('admin/easyReports') ? 'bg-blue-600' : '' }}">Easy Reports</a>
-                    
-
+                <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $reportsOpen ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                    <div class="mt-2 space-y-2 p-2">
+                        <a href="{{ url('/admin/dashboard') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/dashboard') ? '' : '' }}">Issued Report</a>
+                        <a href="{{ url('/admin/nap_report') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/nap_report') ? '' : '' }}">Nap Report</a>
+                        <a href="{{ url('/admin/policy_premium_due_list_report') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/policy_premium_due_list_report') ? '' : '' }}">Policy Premium Report</a>
+                        <a href="{{ url('/admin/agentMTD') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/agentMTD') ? '' : '' }}">Agent MTD</a>
+                        <a href="{{ url('/admin/agentYTD') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/agentYTD') ? '' : '' }}">Agent YTD</a>
+                        <a href="{{ url('/admin/subUnitSummary') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/subUnitSummary') ? '' : '' }}">Sub-Unit Summary</a>
+                        <a href="{{ url('/admin/unitSummary') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/unitSummary') ? '' : '' }}">Unit Summary</a>
+                        <a href="{{ url('/admin/branchSummary') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/branchSummary') ? '' : '' }}">Branch Summary</a>
+                        <a href="{{ url('/admin/branchHonorRolls') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/branchHonorRolls') ? '' : '' }}">Branch Honor Rolls</a>
+                        <a href="{{ url('/admin/unitHonorRolls') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/unitHonorRolls') ? '' : '' }}">Unit Honor Rolls</a>
+                        <a href="{{ url('/admin/customGroup') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/customGroup') ? '' : '' }}">Custom Group</a>
+                        <a href="{{ url('/admin/personalToGO') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/personalToGO') ? '' : '' }}">Personal To Go's (BETA)</a>
+                        <a href="{{ url('/admin/qualifiers') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/qualifiers') ? '' : '' }}">Qualifiers</a>
+                        <a href="{{ url('/admin/MDRTTracker') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/MDRTTracker') ? '' : '' }}">MDRT Tracker</a>
+                        <a href="{{ url('/admin/easyReports') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('admin/easyReports') ? '' : '' }}">Easy Reports</a>
                     </div>
                 </div>
             </div>
