@@ -1,30 +1,30 @@
 <x-app-layout>
     <div class="container bg-white shadow-lg rounded-xl p-4">
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('admin.register.store') }}">
             @csrf
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Left Column -->
                 <div>
                     <!-- First Name -->
-                    <x-input-label for="firstname" :value="__('First Name')" />
-                    <x-text-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
-                    <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
+                    <x-input-label for="firs_tname" :value="__('First Name')" />
+                    <x-text-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
+                    <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
 
                     <!-- Middle Name -->
-                    <x-input-label for="middlename" :value="__('Middle Name')" class="mt-4" />
-                    <x-text-input id="middlename" class="block mt-1 w-full" type="text" name="middlename" :value="old('middlename')" required />
-                    <x-input-error :messages="$errors->get('middlename')" class="mt-2" />
+                    <x-input-label for="middle_name" :value="__('Middle Name')" class="mt-4" />
+                    <x-text-input id="middle_name" class="block mt-1 w-full" type="text" name="middle_name" :value="old('middle_name')" required />
+                    <x-input-error :messages="$errors->get('middle_name')" class="mt-2" />
 
                     <!-- Last Name -->
-                    <x-input-label for="lastname" :value="__('Last Name')" class="mt-4" />
-                    <x-text-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required />
-                    <x-input-error :messages="$errors->get('lastname')" class="mt-2" />
+                    <x-input-label for="last_name" :value="__('Last Name')" class="mt-4" />
+                    <x-text-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required />
+                    <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
 
                     <!-- Display Name -->
-                    <x-input-label for="displayname" :value="__('Display Name (Set by Branch)')" class="mt-4" />
-                    <x-text-input id="displayname" class="block mt-1 w-full" type="text" name="displayname" :value="old('displayname')" required />
-                    <x-input-error :messages="$errors->get('displayname')" class="mt-2" />
+                    <x-input-label for="display_name" :value="__('Display Name (Set by Branch)')" class="mt-4" />
+                    <x-text-input id="display_name" class="block mt-1 w-full" type="text" name="display_name" :value="old('display_name')" required />
+                    <x-input-error :messages="$errors->get('display_name')" class="mt-2" />
 
                     <!-- Email -->
                     <x-input-label for="email" :value="__('Email')" class="mt-4" />
@@ -37,22 +37,22 @@
                     <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
 
                     <!-- Coding Date -->
-                    <x-input-label for="codingdate" :value="__('Coding Date (YYYY-MM-DD)')" class="mt-4" />
-                    <x-text-input id="codingdate" class="block mt-1 w-full" type="text" name="codingdate" :value="old('codingdate')" required />
-                    <x-input-error :messages="$errors->get('codingdate')" class="mt-2" />
+                    <x-input-label for="coding_date" :value="__('Coding Date (YYYY-MM-DD)')" class="mt-4" />
+                    <x-text-input id="coding_date" class="block mt-1 w-full" type="text" name="coding_date" :value="old('coding_date')" required />
+                    <x-input-error :messages="$errors->get('coding_date')" class="mt-2" />
                 </div>
 
                 <!-- Right Column -->
                 <div>
                     <!-- Agent Code -->
-                    <x-input-label for="agentcode" :value="__('Agent Code')" />
-                    <x-text-input id="agentcode" class="block mt-1 w-full" type="text" name="agentcode" :value="old('agentcode')" required autofocus />
-                    <x-input-error :messages="$errors->get('agentcode')" class="mt-2" />
+                    <x-input-label for="agent_code" :value="__('Agent Code')" />
+                    <x-text-input id="agent_code" class="block mt-1 w-full" type="text" name="agent_code" :value="old('agent_code')" required autofocus />
+                    <x-input-error :messages="$errors->get('agent_code')" class="mt-2" />
 
                     <!-- Recruiter Code -->
-                    <x-input-label for="recruitercode" :value="__('Recruiter Code')" class="mt-4" />
-                    <x-text-input id="recruitercode" class="block mt-1 w-full" type="text" name="recruitercode" :value="old('recruitercode')" />
-                    <x-input-error :messages="$errors->get('recruitercode')" class="mt-2" />
+                    <x-input-label for="recruiter_code" :value="__('Recruiter Code')" class="mt-4" />
+                    <x-text-input id="recruiter_code" class="block mt-1 w-full" type="text" name="recruiter_code" :value="old('recruiter_code')" />
+                    <x-input-error :messages="$errors->get('recruiter_code')" class="mt-2" />
 
                     <!-- Role -->
                     <label for="role" class="block mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">Role</label>
@@ -97,15 +97,15 @@
                     </select>
 
                     <!-- Sub Unit -->
-                    <label for="subunit" class="block mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">Sub Unit</label>
-                    <select id="subunit" name="subunit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm">
+                    <label for="sub_unit" class="block mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">Sub Unit</label>
+                    <select id="sub_unit" name="sub_unit" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm">
                         <option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>
                     </select>
 
                     <!-- Subunit Dynamic Script -->
                     <script>    
                         const unitSelect = document.getElementById('unit');
-                        const subunitSelect = document.getElementById('subunit');
+                        const subunitSelect = document.getElementById('sub_unit');
 
                         unitSelect.addEventListener('change', function () {
                             const selectedUnit = this.value;
@@ -118,7 +118,7 @@
                                         subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>';
                                         data.forEach(sub => {
                                             const option = document.createElement('option');
-                                            option.value = sub.id;
+                                            option.value = sub.name;
                                             option.textContent = sub.name;
                                             subunitSelect.appendChild(option);
                                         });
@@ -128,8 +128,8 @@
                     </script>
 
                     <!-- Agent Status -->
-                    <label for="agentstatus" class="block mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">Agent Status</label>
-                    <select id="agentstatus" name="agentstatus" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm">
+                    <label for="agent_status" class="block mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">Agent Status</label>
+                    <select id="agent_status" name="agent_status" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm">
                         <option value="" disabled selected class="text-gray-400"></option>
                         <option value="active">ACTIVE</option>
                         <option value="delisted">DELISTED</option>
