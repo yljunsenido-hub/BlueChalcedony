@@ -102,6 +102,31 @@
                         <option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>
                     </select>
 
+                    <!-- Subunit Dynamic Script -->
+                    <script>    
+                        const unitSelect = document.getElementById('unit');
+                        const subunitSelect = document.getElementById('subunit');
+
+                        unitSelect.addEventListener('change', function () {
+                            const selectedUnit = this.value;
+                            subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Loading...</option>';
+
+                            if (selectedUnit) {
+                                fetch(`/admin/register/${selectedUnit}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>';
+                                        data.forEach(sub => {
+                                            const option = document.createElement('option');
+                                            option.value = sub.id;
+                                            option.textContent = sub.name;
+                                            subunitSelect.appendChild(option);
+                                        });
+                                    });
+                            }
+                        });
+                    </script>
+
                     <!-- Agent Status -->
                     <label for="agentstatus" class="block mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">Agent Status</label>
                     <select id="agentstatus" name="agentstatus" class="mt-1 block w-full rounded-md border-gray-300 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-sm">
@@ -113,33 +138,6 @@
                 </div>
             </div>
 
-            <!-- Subunit Dynamic Script -->
-            <script>
-                const unitSelect = document.getElementById('unit');
-                const subunitSelect = document.getElementById('subunit');
-
-                unitSelect.addEventListener('change', function () {
-                    const selectedUnit = this.value;
-                    subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Loading...</option>';
-
-                    if (selectedUnit) {
-                        fetch(/admin/register/${selectedUnit})
-                            .then(response => response.json())
-                            .then(data => {
-                                subunitSelect.innerHTML = '<option value="" disabled selected class="text-gray-400">Select Sub-Unit</option>';
-                                data.forEach(sub => {
-                                    const option = document.createElement('option');
-                                    option.value = sub.id;
-                                    option.textContent = sub.name;
-                                    subunitSelect.appendChild(option);
-                                });
-                            });
-                    }
-                });
-            </script>
-
-            <!-- Bottom Section (Full Width) -->
-            <!-- Bottom Section (Full Width) -->
 <div class="mt-6">
     <!-- Password -->
     <x-input-label for="password" :value="__('Password')" />
