@@ -2,11 +2,11 @@
     <div class="w-full">
         <div class="flex justify-between h-16 items-center px-0">
             <!-- Left section: Title + Logo -->
-            <div class="flex items-center space-x-1 pl-2"> <!-- 👈 changed pl-6 to pl-8 for more space -->
+            <div class="flex items-center space-x-1 pl-4"> <!-- 👈 changed pl-6 to pl-8 for more space -->
                 <a href="{{ url('/admin/dashboard') }}" class="flex items-center">
-                    <img src="{{ asset('images/bcdqwhitelogo.png') }}" class="h-12 w-auto" alt="Logo">
+                    <img src="{{ asset('images/whitelogoname.png') }}" class="h-12 w-auto" alt="Logo">
                 </a>
-                <h2 class="text-white text-lg font-bold ">Blue Chalcedony Quartz</h2>
+                <h2 class="text-white text-lg font-bold "></h2>
                 
             </div>
 
