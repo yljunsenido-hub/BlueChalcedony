@@ -5,20 +5,25 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
+    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3">
+        
+        <!-- Policies Issued Report -->
+        <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
             UNIT PRODUCTION REPORTS
         </div>
 
-        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-3 pr-3 pt-3 pb-3 mb-2 flex flex-col space-y-5">
+        <!-- divider -->
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
 
-            <!-- Year Selection Section -->
+        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-1 pr-1 pt-1 pb-1 mb-2 flex flex-col space-y-5">
+
+            <!-- Year and Month Selection Section -->
             <div class="container mx-auto rounded-md shadow-sm bg-blue-900 border pt-2 pb-2 flex items-center justify-between"> <!-- Added justify-between -->
                 <a href="{{ route('admin.unitSummary') }}">
                     <p class="ml-4 text-yellow-300 hover:underline hover:text-white">Switch To MTD</p> </h1>
                 </a>
-            <div class="flex space-x-5 mr-3"> <!-- Removed justify-end -->
-                <select id="yearSelect" class="border border-gray-300 rounded-md w-40">
+                <div class="flex space-x-5 mr-3"> <!-- Removed justify-end -->
+                <select id="yearSelect" class="border border-gray-300 rounded-md p-1 w-40">
                     <option value="10">2025</option>
                     <option value="25">2024</option>
                     <option value="50">2023</option>
@@ -31,11 +36,13 @@
         </div>
     </div>
 
+    <div class="pb-4 p-4 bg-white rounded-md shadow-md">
+
     <!-- Show Entries and Search Section -->
-    <div class="mb-3 px-2 flex items-center justify-between">
+    <div class="mb-2 px-2 flex items-center justify-between">
         <div class="flex items-center">
             <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-            <select id="entries" class="border border-gray-300 rounded-md p-1 px-1 py-1">
+            <select id="entries" class="border border-gray-300 rounded-md pl-2 px-5 py-1">
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
@@ -49,11 +56,9 @@
         </div>
     </div>
 
-       
-
     <!-- Data Table Section -->
-    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pb-5">
-        <table id="dataTable" class="min-w-full bg-white border border-gray-300">
+    <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <th class="py-3 px-6 text-left border-r border-gray-300">Branch</th>

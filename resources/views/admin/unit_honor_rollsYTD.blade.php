@@ -5,12 +5,17 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
-            UNIT TOP AGENTS YEAR TO DATE REPORT
+    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-5">
+
+        <!-- Policies Issued Report -->
+        <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
+            Unit Top Agents YTD Report
         </div>
 
-        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-3 pr-3 pt-3 pb-3 mb-2 flex flex-col space-y-5">
+        <!-- divider -->
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
+
+        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-1 pr-1 pt-1 pb-1 mb-2 flex flex-col space-y-5">
 
             <!-- Year and Month Selection Section -->
             <div class="container mx-auto rounded-md shadow-sm bg-blue-900 border pt-2 pb-2 flex items-center justify-between"> <!-- Added justify-between -->
@@ -21,8 +26,10 @@
         </div>
     </div>       
 
+    <!-- // -->
+
     <!-- Data Table Section -->
-    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pb-5">
+    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mt-3 pb-5 pt-5">
         <table id="dataTable" class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -46,8 +53,14 @@
                     <td class="py-3 px-6 border-r border-gray-300">9.00</td>
                 </tr>
             </tbody>
-        </table>
-    </div>
+        <tfoot>
+    </table>
+</div>
 
-    </div>
+                <!-- Pagination Links -->
+                <div class="">
+                    {{-- Ensure pagination controls are displayed --}}
+                </div>
+            </div>
+        </div>
 </x-app-layout>

@@ -7,9 +7,11 @@
 
     <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
         <!-- Policies Issued Report -->
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
+        <div class="p-3 text-blue-900 text-4xl r rounded-t-lg">
             POLICIES ISSUED REPORT
         </div>
+
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
 
         <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300">

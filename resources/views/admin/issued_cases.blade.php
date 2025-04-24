@@ -33,24 +33,26 @@
     </div>
     
     <!-- Data Table Section -->
-    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pb-5">
+    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pt-5 pb-5">
         <table id="dataTable" class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 w-6 text-center border-r border-gray-300">ID</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Agent</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Unit</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Sub-Unit</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Client Name</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Policy N0.</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">APE</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Issued Date</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Action</th>
+                    <th class="py-3 px-6 w-6 text-left border-r border-gray-300">ID</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Agent</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Unit</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Sub-Unit</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Client Name</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Policy N0.</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">APE</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Issued Date</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Action</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
                 <tr class="border-b border-gray-300 hover:bg-gray-100">
                     <td class="py-3 px-6 border-r border-gray-300">001</td>
+                    <td class="py-3 px-6 border-r border-gray-300"></td>
+                    <td class="py-3 px-6 border-r border-gray-300"></td>
                     <td class="py-3 px-6 border-r border-gray-300"></td>
                     <td class="py-3 px-6 border-r border-gray-300"></td>
                     <td class="py-3 px-6 border-r border-gray-300"></td>

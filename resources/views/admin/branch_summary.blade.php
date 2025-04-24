@@ -5,35 +5,43 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
+    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3">
+        
+        <!-- Policies Issued Report -->
+        <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
             BRANCH PRODUCTION REPORTS
         </div>
 
-        <div class="container shadow-md mb-3 mb-4 p-2 bg-blue-900 rounded-md flex justify-between items-center mt-2">
-            <h1 class="pl-2 text-l text-yellow-300 font-semibold ">Month-to-date</h1>
+        <!-- divider -->
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
+
+        <div class="bg-blue-900 text-white shadow-lg rounded-lg p-1 mb-3 pl-1">
+            <h1 class="pl-2 text-l text-white font-semibold ">Month-to-Date</h1>
         </div>
+
+        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-3 pr-3 pt-3 flex flex-col space-y-5">
         
-        <div class="mb-3 p-3 bg-white rounded-md shadow-md">
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center">
-                            <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-                            <select id="entries" class="border border-gray-300 rounded-md p-1 text-sm">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
+        <!-- Show Entries and Search Section -->
+        <div class="px-2 flex items-center justify-between">
+            <div class="flex items-center">
+                <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
+                <select id="entries" class="border text-sm border-gray-300 rounded-md pl-2 px-5 py-1">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
 
-                        <div class="flex items-center">
-                            <label for="search" class="mr-2 text-sm text-gray-600">Search:</label>
-                            <input type="text" id="search" class="px-3 py-1 border border-gray-300 rounded-md shadow-sm text-sm" >
-                        </div>
-                    </div>
+            <div class="flex items-center">
+                <label for="search" class="mr-2 text-sm text-gray-600">Search:</label>
+                <input type="text" id="search" class="px-2 py-1 border border-gray-300 rounded-md shadow-sm text-sm">
+            </div>
+        </div>
 
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white border border-gray-300">
+                <!-- Data Table Section -->
+                <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pt-5 pb-5">
+                    <table id="dataTable" class="min-w-full bg-white border border-gray-300">
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                 <th class="py-3 px-6 text-left border-r border-gray-300">Branch</th>
@@ -66,8 +74,14 @@
                                 <td class="py-3 px-6 border-r border-gray-300">75%</td>
                             </tr>
                         </tbody>
-                    </table>
+                    <tfoot>
+                </table>
+            </div>
+
+                <!-- Pagination Links -->
+                <div class="">
+                    {{-- Ensure pagination controls are displayed --}}
                 </div>
             </div>
-    </div>
+        </div>
 </x-app-layout>

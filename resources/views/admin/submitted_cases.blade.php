@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <!-- NAP Report Section -->
+
         <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-3">
             <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
                 Trackers
@@ -33,17 +33,17 @@
     </div>
     
     <!-- Data Table Section -->
-    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pb-5">
+    <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-2 pt-5 pb-5">
         <table id="dataTable" class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 w-6 text-center border-r border-gray-300">ID</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">First Name</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Last Name</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Application No.</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Policy No.</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">APE</th>
-                    <th class="py-3 px-6 text-center border-r border-gray-300">Status</th>
+                    <th class="py-3 px-6 w-6 text-left border-r border-gray-300">ID</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">First Name</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Last Name</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Application No.</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Policy No.</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">APE</th>
+                    <th class="py-3 px-6 text-left border-r border-gray-300">Status</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">

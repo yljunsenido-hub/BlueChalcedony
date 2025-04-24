@@ -5,12 +5,17 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg">
-            SUB-UNIT PRODUCTION REPORTS
+    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3">
+        
+        <!-- Policies Issued Report -->
+        <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
+            Sub-Unit Production Reports
         </div>
 
-        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-3 pr-3 pt-3 pb-3 mb-2 flex flex-col space-y-5">
+        <!-- divider -->
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
+
+        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-1 pr-1 pt-1 pb-1 mb-2 flex flex-col space-y-5">
 
             <!-- Year and Month Selection Section -->
             <div class="container mx-auto rounded-md shadow-sm bg-blue-900 border pt-2 pb-2 flex items-center justify-between"> <!-- Added justify-between -->
@@ -45,11 +50,13 @@
         </div>
     </div>
 
+    <div class="pb-5 p-4 bg-white rounded-md shadow-md">
+
     <!-- Show Entries and Search Section -->
     <div class="mb-3 px-2 flex items-center justify-between">
         <div class="flex items-center">
             <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-            <select id="entries" class="border border-gray-300 rounded-md p-1 px-1 py-1">
+            <select id="entries" class="border border-gray-300 rounded-md pl-2 px-5 py-1">
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
@@ -63,8 +70,7 @@
         </div>
     </div>
 
-        <div class="pb-5 p-4 bg-white rounded-md shadow-md">
-
+    <!-- Data Table Section -->
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white border border-gray-300">
                 <thead>
