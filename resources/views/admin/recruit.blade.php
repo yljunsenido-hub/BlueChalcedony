@@ -8,7 +8,7 @@
             
             <div class="flex justify-between items-center bg-blue-900 text-white shadow-lg rounded-lg p-2 mb-3">
                 <div class="flex-1 text-left">
-                    <a href="/admin/recruit_create" class="text-white hover:text-yellow-300">
+                    <a href="/admin/recruit_create" class="bg-yellow-400 hover:bg-white text-blue-900 font-bold py-1 px-2 rounded-md shadow-md transition duration-100 ease-in-out">
                         Create New Recruit
                     </a>
                 </div>

@@ -326,7 +326,7 @@
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center">
                             <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-                            <select id="entries" class="border border-gray-300 rounded-md p-1 text-sm">
+                            <select id="entries" class="border border-gray-300 rounded-md text-sm pl-2 px-5 py-1">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
@@ -338,21 +338,22 @@
                             <input type="text" id="search" class="px-3 py-1 border border-gray-300 rounded-md shadow-sm text-sm" placeholder="Search...">
                         </div>
                     </div>
+                    
                     <div class="overflow-x-auto">
                         <table class="min-w-full bg-white border border-gray-300">
                             <thead>
-                                <tr class="bg-gray-200 text-black uppercase text-sm leading-normal">
-                                    <th class="py-3 px-6  border-r border-gray-300 text-left">ID</th>
+                                <tr class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
+                                    <th class="py-3 px-4  border-r border-gray-300 text-left">ID</th>
                                     <th class="py-3 px-6  border-r border-gray-300 text-left">DATE TIME</th>
                                     <th class="py-3 px-6  border-r border-gray-300 text-left">NAMES</th>
                                     <th class="py-3 px-6  border-r border-gray-300 text-left">EMAIL</th>
-                                    <th class="py-3 px-6  border-r border-gray-300 text-left">CONTACT NO.-unit</th>
+                                    <th class="py-3 px-6  border-r border-gray-300 text-left">CONTACT NO.</th>
                                     <th class="py-3 px-6  border-r border-gray-300 text-left">ACTION</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 text-sm font-light">
                                 <tr class="border-b border-gray-300 hover:bg-gray-100 ">
-                                    <td class="py-3 px-6 border-r"></td>
+                                    <td class="py-3 px-4 border-r"></td>
                                     <td class="py-3 px-6 border-r"></td>
                                     <td class="py-3 px-6 border-r"></td>
                                     <td class="py-3 px-6 border-r"></td>

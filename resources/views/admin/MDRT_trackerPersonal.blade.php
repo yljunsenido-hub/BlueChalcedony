@@ -5,18 +5,26 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg mb-2">
+    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3">
+
+        <!-- Policies Issued Report -->
+        <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
             MDRT PERSONAL TRACKER
         </div>
 
-        <h1 class="container mx-auto max-w-8xl bg-blue-900 p-2 rounded-l rounded-r shadow-md mb-3">
-        <a href="{{ route('admin.MDRTTracker') }}">
-            <p class="ml-2 text-yellow-300 hover:underline hover:text-white">Go to Assumed Tracker</p> </h1>
-        </a>
+        <!-- divider -->
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
+
+        <div class="flex justify-between items-center bg-blue-900 text-white shadow-lg rounded-lg p-2 mb-3">
+                <div class="flex-1 text-left">
+                    <a href="/admin/MDRTTracker" class="bg-yellow-400 hover:bg-white text-blue-900 font-bold py-1 px-2 rounded-md shadow-md transition duration-100 ease-in-out">
+                        ← Go to Assumed Tracker
+                    </a>
+                </div>
+            </div>
         
 
-        <div class="mb-4 p-3 bg-white rounded-md shadow-md">
+        <div class="p-3 bg-white rounded-md shadow-md">
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white border border-gray-300">
                 <thead>

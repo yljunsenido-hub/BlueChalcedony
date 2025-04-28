@@ -98,6 +98,16 @@ class AdminController extends Controller
         return view('admin.poster_template');
     }
 
+    public function index_PosterTemplateFeatured()
+    {
+        return view('admin.poster_template_featured');
+    }
+
+    public function index_PosterTemplateAdmin()
+    {
+        return view('admin.poster_template_admin');
+    }
+
     //ProposalBank
     public function index_ProposalSearch()
     {
@@ -135,15 +145,33 @@ class AdminController extends Controller
     {
         return view('admin.poster_template_maintenance');
     }
+
+    public function index_PosterMaintenanceCreateTemplate()
+    {
+        return view('admin.poster_maintenance_createTemplate');
+    }
+
+    //new
     
     public function index_PosterMaintenance()
     {
         return view('admin.poster_maintenance');
     }
 
+    public function index_PosterMaintenanceCreatePoster()
+    {
+        return view('admin.poster_maintenance_createPoster');
+    }
+
+
     public function index_AgentMaintenance()
     {
         return view('admin.agent_maintenance');
+    }
+
+    public function index_AgentMaintenanceCreate()
+    {
+        return view('admin.agent_maintenanceCreate');
     }
 
     public function index_UnitMaintenance()
@@ -151,14 +179,29 @@ class AdminController extends Controller
         return view('admin.unit_maintenance');
     }
 
+    public function index_UnitMaintenanceCreate()
+    {
+        return view('admin.unit_maintenanceCreate');
+    }
+
     public function index_SubUnitMaintenance()
     {
         return view('admin.sub_unit_maintenance');
     }
 
+    public function index_SubUnitMaintenanceCreate()
+    {
+        return view('admin.sub_unit_maintenanceCreate');
+    }
+
     public function index_DigitalCardMaintenance()
     {
         return view('admin.digital_card_maintenance');
+    }
+
+    public function index_DigitalCardMaintenanceCreate()
+    {
+        return view('admin.digital_card_maintenanceCreate');
     }
 
     public function index_ScheduledTask()

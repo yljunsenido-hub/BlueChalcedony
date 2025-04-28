@@ -20,7 +20,7 @@
                     <!-- Entries Dropdown -->
                     <div class="flex items-center">
                         <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-                        <select id="entries" class="border border-gray-300 rounded-md p-1 text-sm">
+                        <select id="entries" class="border border-gray-300 rounded-md text-sm pl-3 px-5 py-1">
                             <option value="10">10</option>
                             <option value="25">25</option>
                             <option value="50">50</option>
@@ -36,10 +36,10 @@
                 </div>
 
                 <!-- Table -->
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white border border-gray-00">
+                <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-2 pt-5 pb-5">
+                    <table id="dataTable" class="min-w-full bg-white border border-gray-300">
                         <thead>
-                            <tr class="bg-gray-200 text-black uppercase text-sm leading-normal">
+                            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                 <th class="py-3 px-5 border-r border-gray-300 text-left">Name</th>
                                 <th class="py-3 px-5 border-r border-gray-300 text-left">Description</th>
                                 <th class="py-3 px-5 border-r border-gray-300 text-left">Repitition</th>

@@ -10,16 +10,16 @@
             
             <div class="flex justify-between items-center bg-blue-900 text-white shadow-lg rounded-lg p-2 mb-3">
                 <div class="flex-1 text-left">
-                    <a href="/admin/#" class="text-white hover:text-yellow-300 font-semibold">
+                    <a href="/admin/poster_maintenance_createTemplate" class="bg-yellow-400 hover:bg-white text-blue-900 font-bold py-1 px-2 rounded-md shadow-md transition duration-100 ease-in-out">
                         Create New from Template
                     </a>
                 </div>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300">
-                    <thead>
-                        <tr class="bg-gray-200">
+            <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-2 pt-5 pb-5">
+                    <table id="dataTable" class="min-w-full bg-white border border-gray-300">
+                        <thead>
+                            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="border border-gray-300 px-4 py-2">ID</th>
                             <th class="border border-gray-300 px-4 py-2">Description</th>
                             <th class="border border-gray-300 px-4 py-2">Poster</th>
@@ -39,7 +39,7 @@
                 </table>
 
                 <!-- Pagination Links -->
-                <div class="p-4">
+                <div class="">
                     {{-- Ensure pagination controls are displayed --}}
                 </div>
             </div>

@@ -7,12 +7,17 @@
             </div>
 
             <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
-            
+
+            <div class="flex items-center justify-between mb-3 bg-blue-900 rounded-md shadow-md p-2">
+                    <p class="text-left text-white ml-1">Agent Personal Details</p>
+                    <a href="/admin/digital_card_maintenanceCreate" class="bg-yellow-400 hover:bg-white text-blue-900 text-sm font-bold px-1 py-1 rounded-md shadow-md transition duration-100 ease-in-out">Add Agent</a>
+                </div>
+
             <div class="bg-white rounded-md shadow-md p-3">
                 <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center">
                     <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-                    <select id="entries" class="border border-gray-300 rounded-md p-1 text-sm">
+                    <select id="entries" class="border border-gray-300 rounded-md text-sm pl-2 px-5 py-1">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>

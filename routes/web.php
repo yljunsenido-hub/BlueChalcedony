@@ -61,6 +61,8 @@ Route::middleware(['auth'])->group(function () {
 
             //MarketingPosters
         Route::get('/admin/poster_template', [AdminController::class, 'index_PosterTemplate']);
+        Route::get('/admin/poster_template_featured', [AdminController::class, 'index_PosterTemplateFeatured']);
+        Route::get('/admin/poster_template_admin', [AdminController::class, 'index_PosterTemplateAdmin']);
 
             //ProposalBank
         Route::get('/admin/proposal_search', [AdminController::class, 'index_ProposalSearch']);
@@ -74,14 +76,30 @@ Route::middleware(['auth'])->group(function () {
             //Appointment
         Route::get('/admin/appointment', [AdminController::class, 'index_Appointment']);
 
-            //BOU
-        Route::get('/admin/poster_template_maintenance', [AdminController::class, 'index_PosterTemplateMaintenance']);        
-        Route::get('/admin/poster_maintenance', [AdminController::class, 'index_PosterMaintenance']);        
-        Route::get('/admin/agent_maintenance', [AdminController::class, 'index_AgentMaintenance']);        
-        Route::get('/admin/unit_maintenance', [AdminController::class, 'index_UnitMaintenance']);        
+        //newUpdate
+            //BCMS
+        Route::get('/admin/poster_template_maintenance', [AdminController::class, 'index_PosterTemplateMaintenance']); 
+        Route::get('/admin/poster_maintenance_createTemplate', [AdminController::class, 'index_PosterMaintenanceCreateTemplate']);
+        
+        Route::get('/admin/poster_maintenance', [AdminController::class, 'index_PosterMaintenance']);     
+        Route::get('/admin/poster_maintenance_createPoster', [AdminController::class, 'index_PosterMaintenanceCreatePoster']);    
+        
+        Route::get('/admin/agent_maintenance', [AdminController::class, 'index_AgentMaintenance']);
+        Route::get('/admin/agent_maintenanceCreate', [AdminController::class, 'index_AgentMaintenanceCreate']);
+        
+        Route::get('/admin/unit_maintenance', [AdminController::class, 'index_UnitMaintenance']);
+        Route::get('/admin/unit_maintenanceCreate', [AdminController::class, 'index_UnitMaintenanceCreate']);
+        
         Route::get('/admin/sub_unit_maintenance', [AdminController::class, 'index_SubUnitMaintenance']);
+        Route::get('/admin/sub_unit_maintenanceCreate', [AdminController::class, 'index_SubUnitMaintenanceCreate']);
+
         Route::get('/admin/digital_card_maintenance', [AdminController::class, 'index_DigitalCardMaintenance']);
+        Route::get('/admin/digital_card_maintenanceCreate', [AdminController::class, 'index_DigitalCardMaintenanceCreate']);
+
         Route::get('/admin/scheduled_task', [AdminController::class, 'index_ScheduledTask']);
+
+
+
 
         //end
 

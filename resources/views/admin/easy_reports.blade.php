@@ -5,16 +5,24 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-2">
-        <div class="bg-blue-900 p-3 text-white text-xl text-center rounded-t-lg mb-2">
+    <div class="max-w-9xl mx-auto bg-white shadow-lg rounded-lg p-3 pb-5">
+
+        <!-- Policies Issued Report -->
+        <div class="text-blue-900 text-4xl font-bold rounded-lg mt-2 mb-2">
             EASY REPORTS
         </div>
 
+        <!-- divider -->
+        <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
+
+
+        <!-- Container -->
+        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-3 pr-3 pt-3 flex flex-col space-y-5">
          <!-- Show Entries and Search Section -->
-         <div class="flex items-center justify-between mb-3">
+         <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <label for="entries" class="mr-2 text-sm text-gray-600">Show entries:</label>
-                    <select id="entries" class="border border-gray-300 rounded-md p-1 text-sm">
+                    <select id="entries" class="border border-gray-300 rounded-md text-sm pl-2 px-5 py-1">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -29,8 +37,8 @@
             </div>
 
             <!-- Table Section -->
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-300">
+            <div class="overflow-x-auto px-5 bg-white-100 p-3 rounded-l rounded-r shadow-md mb-5 pb-5 pt-5">
+                <table id="dataTable" class="min-w-full bg-white border border-gray-300">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left border-r border-gray-300">#</th>
@@ -46,7 +54,7 @@
                             <td class="py-3 px-6 border-r border-gray-300 flex justify-center">
                                 <button class="text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md py-2 px-2 mr-2">VIEW</button>
                                 <button class="text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md py-2 px-2 mr-2">PLAIN VIEW</button>
-                                <button class="text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md py-2 px-2">DOWNLOAD</button>
+                                <button class="text-white bg-green-500 hover:bg-green-600 rounded-md shadow-md py-2 px-2">DOWNLOAD</button>
                             </td>
                         </tr>
 
@@ -59,14 +67,19 @@
                             <td class="py-3 px-6 border-r border-gray-300 flex justify-center">
                                 <button class="text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md py-2 px-2 mr-2">VIEW</button>
                                 <button class="text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md py-2 px-2 mr-2">PLAIN VIEW</button>
-                                <button class="text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md py-2 px-2">DOWNLOAD</button>
+                                <button class="text-white bg-green-500 hover:bg-green-600 rounded-md shadow-md py-2 px-2">DOWNLOAD</button>
                             </td>
                         </tr>
                         <!-- Add more rows as needed -->
-                    </tbody>
+                        </tbody>
+                    <tfoot>
                 </table>
             </div>
-        </div>
 
-    </div>
+                <!-- Pagination Links -->
+                <div class="">
+                    {{-- Ensure pagination controls are displayed --}}
+                </div>
+            </div>
+        </div>
 </x-app-layout>

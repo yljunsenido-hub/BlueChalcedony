@@ -8,7 +8,7 @@
 
             <div class="flex justify-between items-center bg-blue-900 text-white shadow-lg rounded-lg p-1 mb-3">
                 <div class="flex-1 text-left pl-40">
-                    <a href="/admin/poster_template_general" class="text-white hover:text-yellow-300">
+                    <a href="/admin/poster_template" class="text-yellow-300 hover:text-white">
                         General Posters
                     </a>
                 </div>
@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <div class="flex-1 text-right pr-40">
-                    <a href="/admin/poster_template_admin" class="text-yellow-300 hover:text-white">
+                    <a href="/admin/poster_template_admin" class="text-white hover:text-yellow-300">
                         Admin Posters
                     </a>
                 </div>
