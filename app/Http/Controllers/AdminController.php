@@ -169,11 +169,6 @@ class AdminController extends Controller
         return view('admin.agent_maintenance');
     }
 
-    public function index_AgentMaintenanceCreate()
-    {
-        return view('admin.agent_maintenanceCreate');
-    }
-
     public function index_UnitMaintenance()
     {
         return view('admin.unit_maintenance');
