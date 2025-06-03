@@ -1,13 +1,13 @@
-<nav x-data="{ open: false }" class="sticky top-0 h-16 bg-gradient-to-l from-blue-600 to-blue-900">
+<nav x-data="{ open: false }" class="fixed top-0 left-0 right-0 z-50 h-16 bg-gradient-to-l from-blue-600 to-blue-900">
+
     <div class="w-full">
         <div class="flex justify-between h-16 items-center px-0">
             <!-- Left section: Title + Logo -->
-            <div class="flex items-center space-x-1 pl-4"> <!-- 👈 changed pl-6 to pl-8 for more space -->
+            <div class="flex items-center space-x-1 pl-4">
                 <a href="{{ url('/admin/dashboard') }}" class="flex items-center">
                     <img src="{{ asset('images/whitelogoname.png') }}" class="h-12 w-auto" alt="Logo">
                 </a>
-                <h2 class="text-white text-lg font-bold "></h2>
-                
+                <h2 class="text-white text-lg font-bold"></h2>
             </div>
 
             <!-- Settings Dropdown -->
@@ -29,7 +29,6 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')"

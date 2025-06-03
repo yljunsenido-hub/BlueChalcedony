@@ -19,12 +19,13 @@
 
             <!-- Year and Month Selection Section -->
             <div class="container mx-auto rounded-md shadow-sm bg-blue-900 border pt-2 pb-2 flex items-center justify-between"> <!-- Added justify-between -->
-                <a href="{{ route('admin.branchHonorRollsYTD') }}">
-                    <p class="ml-4 text-yellow-300 hover:underline hover:text-white">Switch To YTD</p> </h1>
+                <a href="/admin/branchHonorRollsYTD" class="text-sm bg-yellow-400 hover:bg-white text-blue-900 font-bold py-1 px-2 ml-2 rounded-md shadow-md transition duration-100 ease-in-out">
+                        Switch to YTD
                 </a>
+                
             <div class="flex space-x-5 mr-3"> <!-- Removed justify-end -->
                 
-                <select id="monthSelect" class="border border-gray-300 rounded-md p-1 w-40">
+                <select id="monthSelect" class="text-sm border border-gray-300 rounded-md p-1 w-40">
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>

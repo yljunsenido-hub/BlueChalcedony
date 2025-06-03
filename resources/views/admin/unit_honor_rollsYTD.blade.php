@@ -19,8 +19,8 @@
 
             <!-- Year and Month Selection Section -->
             <div class="container mx-auto rounded-md shadow-sm bg-blue-900 border pt-2 pb-2 flex items-center justify-between"> <!-- Added justify-between -->
-                <a href="{{ route('admin.unitHonorRolls') }}">
-                    <p class="ml-4 text-yellow-300 hover:underline hover:text-white">Switch To MTD</p> </h1>
+                <a href="/admin/unitHonorRolls" class="text-sm bg-yellow-400 hover:bg-white text-blue-900 font-bold py-1 px-2 ml-2 rounded-md shadow-md transition duration-100 ease-in-out">
+                        Switch to MTD
                 </a>
             
         </div>

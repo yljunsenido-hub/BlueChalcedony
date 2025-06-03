@@ -4,6 +4,26 @@
         @php $user = auth()->user(); @endphp
 
         @if($user->role == 'admin')
+
+        <h2 class="text-s font-semibold">Activities</h2>
+
+        <!-- Events -->
+        @php $events = request()->is('admin/recruitment/*'); @endphp
+        <div class="relative group">
+            <button data-role="admin" class="dropdown-toggle w-full py-1 px-4 flex justify-between items-center rounded text-left transition-colors duration-200 {{ $events ? : '' }}">
+                <span class="group-hover:text-yellow-400 md:font-bold">Events</span>
+                <svg class="w-4 h-4 transition-transform duration-300 ml-2 {{ $events ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out origin-top {{ $events ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-95' }}">
+                <div class="space-y-2 p-2">
+                    <a href="{{ url('/admin/#') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/#') ? : '' }}">Upcoming Events</a>
+                    <a href="{{ url('/admin/#') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/#') ? : '' }}">My Events</a>
+                    <a href="{{ url('/admin/event_maintenance') }}" class="block py-1.5 px-4 rounded transition-colors duration-200 hover:text-yellow-400 {{ request()->is('/admin/#') ? : '' }}">Event Maintenance</a>
+                </div>
+            </div>
+        </div>
             
         <h2 class="text-s font-semibold">Operations</h2>
 

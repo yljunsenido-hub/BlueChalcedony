@@ -124,11 +124,44 @@ class AdminController extends Controller
     {
         return view('admin.recruit');
     }
+    //
+    public function index_RecruitViewProgress()
+    {
+        return view('admin.recruit_view_progress');
+    }
+
+    public function index_RecruitEditRecruitInfo()
+    {
+        return view('admin.recruit_edit_recruit_info');
+    }
+    //
 
     public function index_RecruitmentProcess()
     {
         return view('admin.recruitment_process');
     }
+    //RecruitProcessViewDetails
+    public function index_RecruitmentProcessViewDetails()
+    {
+        return view('admin.recruitment_process_view_details');
+    }
+
+    public function index_RecruitmentProcessViewRecruits()
+    {
+        return view('admin.recruitment_process_view_recruits');
+    }
+
+    public function index_RecruitmentProcessViewProgress()
+    {
+        return view('admin.recruitment_process_view_progress');
+    }
+    //
+    public function index_RecruitmentProcessDetails()
+    {
+        return view('admin.recruitment_process_details');
+    }
+
+
     public function index_RecruitCreate()
     {
         return view('admin.recruit_create');
@@ -293,5 +326,16 @@ class AdminController extends Controller
     public function index_EasyReports()
     {
         return view('admin.easy_reports');
+    }
+
+    //Events
+    public function index_EventMaintenance()
+    {
+        return view('admin.event_maintenance');
+    }
+
+    public function index_EventMaintenanceCreate()
+    {
+        return view('admin.event_maintenanceCreate');
     }
 }

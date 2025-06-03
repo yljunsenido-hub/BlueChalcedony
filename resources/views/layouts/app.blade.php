@@ -15,18 +15,20 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased overflow-x-hidden w-full h-screen relative">
-
+    
     <!-- Sidebar (fixed and floating) -->
     @include('components.sidebar')
 
     <!-- Navigation -->
-    @include('layouts.navigation')
-
+    <div class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+        @include('layouts.navigation')
+    </div>
+    
     <!-- Main Content -->
-    <div class="min-h-screen w-full transition-all duration-300 ease-in-out">
+    <div class="min-h-screen w-full transition-all duration-300 ease-in-out pt-20">
 
         <!-- Page Content -->
-        <main class="pl-72 pr-8 pt-8 pb-10" id="mainContent">
+        <main class="pl-72 pr-8 pb-10" id="mainContent">
             {{ $slot }}
         </main>
         

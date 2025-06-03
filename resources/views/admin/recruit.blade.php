@@ -19,14 +19,12 @@
                     <thead>
                         <tr class="bg-gray-200">
                             <th class="border border-gray-300 px-4 py-2">ID</th>
-                            <th class="border border-gray-300 px-4 py-2">Agent</th>
-                            <th class="border border-gray-300 px-4 py-2">Unit</th>
-                            <th class="border border-gray-300 px-4 py-2">Sub-Unit</th>
-                            <th class="border border-gray-300 px-4 py-2">Client Name</th>
-                            <th class="border border-gray-300 px-4 py-2">Policy No.</th>
-                            <th class="border border-gray-300 px-4 py-2">APE</th>
-                            <th class="border border-gray-300 px-4 py-2">Issued Date</th>
-                            <th class="border border-gray-300 px-4 py-2">Action</th>
+                            <th class="border border-gray-300 px-4 py-2">Unit/Sub-Unit</th>
+                            <th class="border border-gray-300 px-4 py-2">Recruit</th>
+                            <th class="border border-gray-300 px-4 py-2">Recruiter</th>
+                            <th class="border border-gray-300 px-4 py-2">Progress Rating (%)</th>
+                            <th class="border border-gray-300 px-4 py-2">For Approvals</th>
+                            <th class="border border-gray-300 w-48">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,9 +36,21 @@
                                 <th class="border border-gray-300 px-4 py-2"></th>
                                 <th class="border border-gray-300 px-4 py-2"></th>
                                 <th class="border border-gray-300 px-4 py-2"></th>
-                                <th class="border border-gray-300 px-4 py-2"></th>
-                                <th class="border border-gray-300 px-4 py-2"></th>
-                                <th class="border border-gray-300 px-4 py-2"></th>
+                                <td class="space-x-2 flex justify-center w-64 p-2">
+                                    <!-- View Progress Button with Text -->
+                                    <a href="/admin/recruit_view_progress" 
+                                        class="pt-2 pb-2 pl-1 pr-2 bg-blue-500 text-white rounded-md hover:bg-blue-700" 
+                                        title="View Progress"> <!-- Add a title attribute -->
+                                        <span class="text-sm font-medium ml-1 mb-1 inline-block">View Progress</span>
+                                    </a>
+
+                                    <!-- Edit Recruit Info Button with Text -->
+                                    <a href="/admin/recruit_edit_recruit_info" 
+                                        class="pt-2 pb-2 pl-1 pr-2 bg-green-500 text-white rounded-md hover:bg-green-700"
+                                        title="Edit Recruit Info"> <!-- Add a title attribute -->
+                                        <span class="text-sm font-medium ml-1 mb-1 inline-block">Edit Recruit Info</span>
+                                    </a>
+                                </td>
                             </tr>
 
                     </tbody>

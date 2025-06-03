@@ -45,6 +45,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/policy_premium_due_list_report_upload', [AdminController::class, 'index_policyPremiumDueListUpload']);
         Route::get('/admin/policy_premium_due_list_report', [PolicyPremiumDueListReportController::class, 'index_policyPremiumDueList']);
 
+        //Events
+        Route::get('/admin/event_maintenance', [AdminController::class, 'index_EventMaintenance']);
+        Route::get('/admin/event_maintenanceCreate', [AdminController::class, 'index_EventMaintenanceCreate']);
+
         //new
             //BOU
         Route::get('/admin/batch_photos_upload', [AdminController::class, 'index_BatchPhotosUpload']);
@@ -70,7 +74,16 @@ Route::middleware(['auth'])->group(function () {
 
             //Recruitment
         Route::get('/admin/recruit', [AdminController::class, 'index_Recruit']);
+        Route::get('/admin/recruit_view_progress', [AdminController::class, 'index_RecruitViewProgress']);
+        Route::get('/admin/recruit_edit_recruit_info', [AdminController::class, 'index_RecruitEditRecruitInfo']);
+            //
         Route::get('/admin/recruitment_process', [AdminController::class, 'index_RecruitmentProcess']);
+        Route::get('/admin/recruitment_process_view_details', [AdminController::class, 'index_RecruitmentProcessViewDetails']);
+        Route::get('/admin/recruitment_process_view_recruits', [AdminController::class, 'index_RecruitmentProcessViewRecruits']);
+        Route::get('/admin/recruitment_process_view_progress', [AdminController::class, 'index_RecruitmentProcessViewProgress']);
+            //
+        Route::get('/admin/recruitment_process_details', [AdminController::class, 'index_RecruitmentProcessDetails']);
+
         Route::get('/admin/recruit_create', [AdminController::class, 'index_RecruitCreate']);
 
             //Appointment
@@ -97,9 +110,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/digital_card_maintenanceCreate', [AdminController::class, 'index_DigitalCardMaintenanceCreate']);
 
         Route::get('/admin/scheduled_task', [AdminController::class, 'index_ScheduledTask']);
-
-
-
 
         //end
 

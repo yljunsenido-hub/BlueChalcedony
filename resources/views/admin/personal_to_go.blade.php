@@ -15,8 +15,9 @@
         <!-- divider -->
         <div class="bg-gray-400 text-white shadow-lg p-1 rounded-sm mb-3"></div>
 
-        <div class="pl-2 pr-2 pt-2 pb-2 mb-4 bg-blue-900 rounded-md flex justify-between items-center">
-            
+        <div class="container mx-auto rounded-md shadow-sm bg-white border pl-1 pr-1 pt-1 pb-1 mb-2 flex flex-col space-y-5">
+
+        <div class="p-2 bg-blue-900 rounded-md flex justify-between items-center">
             <h2 class="text-lg font-semibold text-yellow-300">Personal Monitoring</h2>
                 <a class="px-3 py-1 bg-white text-gray-700 rounded-md hover:bg-yellow-300 hover:text-white text-sm font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-6">
@@ -25,6 +26,7 @@
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
                 </a>
+        </div>
         </div>
 
         <div class="mb-3 p-2 bg-blue-200 rounded-md flex justify-between items-center">
